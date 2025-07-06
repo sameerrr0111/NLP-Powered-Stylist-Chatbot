@@ -8,7 +8,7 @@ This was my semester project to learn how NLP pipelines and simple chatbot logic
 - Clone the repo  
 - Install dependencies (`pip install -r requirements.txt`)  
 - Put your AIML files inside `/aiml_files`  
-- Run `app.py`  
+- Run `main.py`  
 - Open `localhost:5000` in your browser
 
 ---
