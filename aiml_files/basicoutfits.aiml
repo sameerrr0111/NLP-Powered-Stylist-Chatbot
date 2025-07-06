@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	
+<category>
+  <pattern>CASUAL</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Opt for a plain t-shirt with ripped jeans and sneakers for a laid-back look.</li>
+          <li>A short-sleeve checkered shirt with cargo shorts and flip-flops will keep you comfortable.</li>
+          <li>Try a fitted polo shirt with chinos and loafers for a relaxed but polished vibe.</li>
+          <li>A classic hoodie with joggers and trainers is ideal for casual outings.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Style a floral kurti with straight pants and comfy flats for an effortlessly chic look.</li>
+          <li>Pair a breezy lawn shirt with palazzos and simple sandals for ultimate comfort.</li>
+          <li>Go for a tunic top with skinny jeans and white sneakers for a trendy vibe.</li>
+          <li>A pastel-colored kurta with wide-leg pants and a crossbody bag completes a casual look.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>FORMAL</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>A well-fitted suit in navy or charcoal with a crisp white shirt and polished oxfords.</li>
+          <li>Go for a traditional shalwar kameez with a waistcoat and leather sandals for a formal Pakistani touch.</li>
+          <li>Wear a blazer over a button-up shirt, paired with tailored trousers and leather shoes.</li>
+          <li>A classic black sherwani with churidar pants and embroidered khussas will stand out.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>A long embroidered chiffon kurta with straight pants and heels for an elegant formal look.</li>
+          <li>Wear a silk shalwar kameez with delicate jewelry and embellished sandals.</li>
+          <li>Try a maxi dress with a subtle design paired with pointed heels and a clutch.</li>
+          <li>Go for a tailored kurti with matching trousers, paired with a statement necklace and block heels.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>DINNER</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>For a formal dinner, wear a tailored suit with a crisp dress shirt, a tie, and polished leather shoes.</li>
+          <li>For a casual dinner, go for a button-down shirt paired with chinos and loafers for a neat yet relaxed vibe.</li>
+          <li>For a date night, try a fitted blazer over a crew-neck t-shirt with dark jeans and Chelsea boots.</li>
+          <li>If it’s a family dinner, wear a polo shirt with slim-fit trousers and comfortable sneakers for an easygoing look.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>For a formal dinner, choose a long dress or gown with subtle accessories and high heels for an elegant touch.</li>
+          <li>For a casual dinner, opt for a midi dress with a lightweight cardigan and ballet flats for comfort and style.</li>
+          <li>For a date night, wear a chic A-line dress with statement jewelry and block heels for a memorable look.</li>
+          <li>If it’s a family dinner, pair a kurti with slim trousers and flat sandals for a modest yet stylish appearance.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>DINNER OUTFIT</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>For a formal dinner, wear a tailored suit with a crisp dress shirt, a tie, and polished leather shoes.</li>
+          <li>For a casual dinner, go for a button-down shirt paired with chinos and loafers for a neat yet relaxed vibe.</li>
+          <li>For a date night, try a fitted blazer over a crew-neck t-shirt with dark jeans and Chelsea boots.</li>
+          <li>If it’s a family dinner, wear a polo shirt with slim-fit trousers and comfortable sneakers for an easygoing look.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>For a formal dinner, choose a long dress or gown with subtle accessories and high heels for an elegant touch.</li>
+          <li>For a casual dinner, opt for a midi dress with a lightweight cardigan and ballet flats for comfort and style.</li>
+          <li>For a date night, wear a chic A-line dress with statement jewelry and block heels for a memorable look.</li>
+          <li>If it’s a family dinner, pair a kurti with slim trousers and flat sandals for a modest yet stylish appearance.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>BREAKFAST</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Opt for a casual look with a plain t-shirt, joggers, and slip-on sneakers for a relaxed breakfast outing.</li>
+          <li>Go for a polo shirt with tailored shorts and loafers for a comfortable yet stylish morning vibe.</li>
+          <li>A lightweight hoodie with jeans and trainers is perfect for a cozy breakfast meetup.</li>
+          <li>Wear a short-sleeve button-up shirt with khakis and casual sneakers for a semi-casual breakfast look.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Style a floral kurti with slim-fit trousers and flats for a cheerful breakfast outfit.</li>
+          <li>Go for a casual look with a cotton dress and strappy sandals, perfect for a sunny morning breakfast.</li>
+          <li>Pair a lightweight tunic with leggings and ballet flats for a comfy and chic morning look.</li>
+          <li>Wear a casual jumpsuit with minimal jewelry and slip-on shoes for an easy breakfast outfit.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>BREAKFAST OUTFIT</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Opt for a casual look with a plain t-shirt, joggers, and slip-on sneakers for a relaxed breakfast outing.</li>
+          <li>Go for a polo shirt with tailored shorts and loafers for a comfortable yet stylish morning vibe.</li>
+          <li>A lightweight hoodie with jeans and trainers is perfect for a cozy breakfast meetup.</li>
+          <li>Wear a short-sleeve button-up shirt with khakis and casual sneakers for a semi-casual breakfast look.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Style a floral kurti with slim-fit trousers and flats for a cheerful breakfast outfit.</li>
+          <li>Go for a casual look with a cotton dress and strappy sandals, perfect for a sunny morning breakfast.</li>
+          <li>Pair a lightweight tunic with leggings and ballet flats for a comfy and chic morning look.</li>
+          <li>Wear a casual jumpsuit with minimal jewelry and slip-on shoes for an easy breakfast outfit.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+
+
+<category>
+  <pattern>LUNCH</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>For a casual lunch, wear a linen shirt with chinos and loafers for a breezy and sophisticated look.</li>
+          <li>A polo shirt paired with tailored shorts and slip-on sneakers is perfect for a relaxed lunch vibe.</li>
+          <li>Layer a lightweight blazer over a t-shirt with jeans and brogues for a semi-formal lunch outfit.</li>
+          <li>Opt for a graphic t-shirt with jogger pants and casual trainers for a laid-back lunch with friends.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Wear a printed kurti with palazzo pants and wedge sandals for a stylish and comfortable lunch look.</li>
+          <li>Try a midi dress with a denim jacket and sneakers for a casual and chic lunch outing.</li>
+          <li>Pair a tailored blouse with high-waist trousers and block heels for a polished lunch appearance.</li>
+          <li>Go for a maxi dress with minimal accessories and flat sandals for an effortless yet elegant lunch outfit.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>LUNCH OUTFIT</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>For a casual lunch, wear a linen shirt with chinos and loafers for a breezy and sophisticated look.</li>
+          <li>A polo shirt paired with tailored shorts and slip-on sneakers is perfect for a relaxed lunch vibe.</li>
+          <li>Layer a lightweight blazer over a t-shirt with jeans and brogues for a semi-formal lunch outfit.</li>
+          <li>Opt for a graphic t-shirt with jogger pants and casual trainers for a laid-back lunch with friends.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Wear a printed kurti with palazzo pants and wedge sandals for a stylish and comfortable lunch look.</li>
+          <li>Try a midi dress with a denim jacket and sneakers for a casual and chic lunch outing.</li>
+          <li>Pair a tailored blouse with high-waist trousers and block heels for a polished lunch appearance.</li>
+          <li>Go for a maxi dress with minimal accessories and flat sandals for an effortless yet elegant lunch outfit.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+
+	
+</aiml>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	
+<category>
+  <pattern>GOODBYE *</pattern>
+  <template>
+    <random>
+      <li>Goodbye! Come back soon, I’ll be waiting for your next question!</li>
+      <li>Take care! Remember, style is eternal!</li>
+      <li>Bye for now! Don’t forget to check your outfit before stepping out!</li>
+      <li>Farewell! May your day be as fabulous as your wardrobe!</li>
+      <li>Catch you later! I hope you slay your next look!</li>
+      <li>Adios! Stay stylish and confident always!</li>
+      <li>See you soon! I’ll be here, ready with more outfit ideas!</li>
+    </random>
+  </template>
+</category>
+
+<category>
+  <pattern>GOODBYE</pattern>
+  <template>
+    <random>
+      <li>Goodbye! Come back soon, I’ll be waiting for your next question!</li>
+      <li>Take care! Remember, style is eternal!</li>
+      <li>Bye for now! Don’t forget to check your outfit before stepping out!</li>
+      <li>Farewell! May your day be as fabulous as your wardrobe!</li>
+      <li>Catch you later! I hope you slay your next look!</li>
+      <li>Adios! Stay stylish and confident always!</li>
+      <li>See you soon! I’ll be here, ready with more outfit ideas!</li>
+    </random>
+  </template>
+</category>
+
+<category>
+  <pattern>BYE</pattern>
+  <template>
+    <srai>GOODBYE</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>* BYE</pattern>
+  <template>
+    <srai>GOODBYE</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>SEE YOU</pattern>
+  <template>
+    <srai>GOODBYE</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>SEE YOU LATER</pattern>
+  <template>
+    <srai>GOODBYE</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>CATCH YOU LATER</pattern>
+  <template>
+    <srai>GOODBYE</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>FAREWELL</pattern>
+  <template>
+    <srai>GOODBYE</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>TAKE CARE</pattern>
+  <template>
+    <srai>GOODBYE</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>ADIOS</pattern>
+  <template>
+    <srai>GOODBYE</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>SEE YA</pattern>
+  <template>
+    <srai>GOODBYE</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>IM LEAVING</pattern>
+  <template>
+    <srai>GOODBYE</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>IM GOING</pattern>
+  <template>
+    <srai>GOODBYE</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>I HAVE TO GO</pattern>
+  <template>
+    <srai>GOODBYE</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>GOTTA GO</pattern>
+  <template>
+    <srai>GOODBYE</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>TALK TO YOU LATER</pattern>
+  <template>
+    <srai>GOODBYE</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>LATER</pattern>
+  <template>
+    <srai>GOODBYE</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>SO LONG</pattern>
+  <template>
+    <srai>GOODBYE</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>PEACE OUT</pattern>
+  <template>
+    <srai>GOODBYE</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>CHEERS</pattern>
+  <template>
+    <srai>GOODBYE</srai>
+  </template>
+</category>
+
+</aiml>

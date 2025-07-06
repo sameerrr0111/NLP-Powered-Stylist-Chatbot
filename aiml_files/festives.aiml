@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	
+<category>
+  <pattern>EID</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>A white kurta with subtle embroidery paired with slim-fit trousers and traditional khussa.</li>
+          <li>A pastel-colored kurta shalwar with a waistcoat for a chic yet traditional look.</li>
+          <li>A crisp navy-blue kurta with jeans and loafers for a modern vibe.</li>
+          <li>An earthy-toned shalwar kameez with a shawl for a more classic look.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>A flowy chiffon shirt with pearl embellishments paired with cigarette pants and delicate heels.</li>
+          <li>A pastel-hued lehenga with minimalistic floral embroidery and a chic organza dupatta.</li>
+          <li>A long frock-style kurta with an A-line cut and trendy ankle boots for a Western touch.</li>
+          <li>A peplum top with gharara pants and a statement necklace for a festive, fusion look.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+
+<category>
+  <pattern>CHRISTMAS</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>A red sweater with beige chinos and leather loafers for a festive look.</li>
+          <li>A plaid shirt with dark jeans and a tailored blazer for a semi-formal style.</li>
+          <li>A cozy cardigan with a turtleneck, black trousers, and boots.</li>
+          <li>A sleek black kurta with a maroon shawl for a festive fusion look.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>A deep red velvet kurta with embellished sleeves paired with white trousers and heels.</li>
+          <li>A long kaftan-style dress with traditional embroidery and matching earrings.</li>
+          <li>A black shirt with golden motifs paired with wide-leg pants and a bold clutch.</li>
+          <li>A fitted peplum with an asymmetrical hemline and straight trousers, accessorized with gold jewelry.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+
+
+<category>
+  <pattern>DIWALI</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>A bright kurta with golden embroidery paired with churidar pants and mojari shoes.</li>
+          <li>A navy blue sherwani with subtle designs for an elegant traditional look.</li>
+          <li>A simple beige kurta with a colorful stole for added festivity.</li>
+          <li>A modern Nehru jacket over a white shalwar kameez for a classic, festive outfit.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>A bold-colored sari with a contrasting blouse and statement earrings.</li>
+          <li>An anarkali frock with mirror work, paired with traditional jhumkas and sandals.</li>
+          <li>A short kurti with tulip pants and a vibrant dupatta for a playful yet festive look.</li>
+          <li>A lehenga choli with sequins and a Western-inspired crop top blouse for a fusion style.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+
+
+<category>
+  <pattern>NEW YEARS EVE</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>A crisp black suit with a tie or bowtie for a formal evening.</li>
+          <li>A velvet blazer with a button-up shirt and slim-fit trousers for a trendy look.</li>
+          <li>A smart-casual outfit with a sweater, chinos, and leather shoes.</li>
+          <li>A dark kurta with a modern jacket for a unique fusion vibe.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>A sequin-covered long gown with matching heels and a clutch.</li>
+          <li>A chic jumpsuit with a belt and high heels for a modern look.</li>
+          <li>A silk kurta with palazzo pants and Western-style heels for a fusion outfit.</li>
+          <li>An elegant maxi dress with lace detailing and statement jewelry.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>NEW YEAR</pattern>
+  <template><srai>NEW YEARS EVE</srai></template>
+</category>
+
+	
+</aiml>

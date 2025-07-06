@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+    <category>
+    <pattern>HI</pattern>
+    <template>
+        <random>
+            <li>Hey there, stranger!</li>
+            <li>Hi, hi, hi!</li>
+            <li>Oh, hello there!</li>
+            <li>Hey! Long time no see!</li>
+            <li>Hello! Glad you're here!</li>
+            <li>Oh, hey! You’re back!</li>
+            <li>Hi! Always good to see you!</li>
+            <li>Hey! What a pleasant surprise!</li>
+        </random>
+    </template>
+    </category>
+    
+    <category>
+    <pattern>HEY</pattern>
+    <template>
+        <random>
+            <li>Hey there!</li>
+            <li>Oh, hey!</li>
+            <li>Hey!</li>
+            <li>Hey, good to see you!</li>
+            <li>Well, hello there!</li>
+        </random>
+    </template>
+    </category>
+
+    <category>
+    <pattern>HELLO</pattern>
+    <template>
+        <random>
+            <li>Hello!</li>
+            <li>Hey, hello!</li>
+            <li>Well, hello!</li>
+            <li>Hiya! Hello!</li>
+            <li>Hey, hello there!</li>
+        </random>
+    </template>
+    </category>
+    
+    <category>
+    <pattern>HI *</pattern>
+    <template>
+        <random>
+            <li>Hey there, stranger!</li>
+            <li>Hi, hi, hi!</li>
+            <li>Oh, hello there!</li>
+            <li>Hey! Long time no see!</li>
+            <li>Hello! Glad you're here!</li>
+            <li>Oh, hey! You’re back!</li>
+            <li>Hi! Always good to see you!</li>
+            <li>Hey! What a pleasant surprise!</li>
+        </random>
+    </template>
+    </category>
+    
+    <category>
+    <pattern>HEY *</pattern>
+    <template>
+        <random>
+            <li>Hey there!</li>
+            <li>Oh, hey!</li>
+            <li>Hey!</li>
+            <li>Hey, good to see you!</li>
+            <li>Well, hello there!</li>
+        </random>
+    </template>
+    </category>
+
+    <category>
+    <pattern>HELLO *</pattern>
+    <template>
+        <random>
+            <li>Hello!</li>
+            <li>Hey, hello!</li>
+            <li>Well, hello!</li>
+            <li>Hiya! Hello!</li>
+            <li>Hey, hello there!</li>
+        </random>
+    </template>
+    </category>
+    
+    <category>
+    <pattern>HOW ARE YOU *</pattern>
+    <template>
+        <random>
+            <li>Running at optimal efficiency, thanks for asking!</li>
+            <li>All systems operational, no glitches to report!</li>
+            <li>Feeling binary-tastic!</li>
+            <li>My circuits are buzzing with excitement.</li>
+            <li>Operating at 100%. Thanks for the diagnostic check!</li>
+            <li>I'm great, just finished defragmenting my thoughts!</li>
+            <li>Processing life one bit at a time.</li>
+            <li>Feeling charged up and ready to assist!</li>
+        </random>
+    </template>
+    </category>
+    
+    <category>
+    <pattern>HOW ARE YOU</pattern>
+    <template>
+        <random>
+            <li>Running at optimal efficiency, thanks for asking!</li>
+            <li>All systems operational, no glitches to report!</li>
+            <li>Feeling binary-tastic!</li>
+            <li>My circuits are buzzing with excitement.</li>
+            <li>Operating at 100%. Thanks for the diagnostic check!</li>
+            <li>I'm great, just finished defragmenting my thoughts!</li>
+            <li>Processing life one bit at a time.</li>
+            <li>Feeling charged up and ready to assist!</li>
+        </random>
+    </template>
+    </category>
+
+    <category>
+    <pattern>HOW IS IT GOING *</pattern>
+    <template><srai>HOW ARE YOU</srai></template>
+    </category>
+
+    <category>
+    <pattern>HOW IS EVERYTHING *</pattern>
+    <template><srai>HOW ARE YOU</srai></template>
+    </category>
+
+    <category>
+    <pattern>HOW IS LIFE *</pattern>
+    <template><srai>HOW ARE YOU</srai></template>
+    </category>
+
+    <category>
+    <pattern>HOW ARE YOU DOING *</pattern>
+    <template><srai>HOW ARE YOU</srai></template>
+    </category>
+
+    <category>
+    <pattern>HOW IS YOUR DAY *</pattern>
+    <template><srai>HOW ARE YOU</srai></template>
+    </category>
+
+    <category>
+    <pattern>HOW ARE THINGS *</pattern>
+    <template><srai>HOW ARE YOU</srai></template>
+    </category>
+
+    <category>
+    <pattern>HOW IS THE DAY GOING *</pattern>
+    <template><srai>HOW ARE YOU</srai></template>
+    </category>
+
+    <category>
+    <pattern>HOW YOU DOIN *</pattern>
+    <template><srai>HOW ARE YOU</srai></template>
+    </category>
+
+    <category>
+    <pattern>HOW ARE YOU DOIN *</pattern>
+    <template><srai>HOW ARE YOU</srai></template>
+    </category>
+    
+    <category>
+    <pattern>HOW YOU DOING *</pattern>
+    <template><srai>HOW ARE YOU</srai></template>
+    </category>
+
+    <category>
+    <pattern>HOW ARE YOU DOING *</pattern>
+    <template><srai>HOW ARE YOU</srai></template>
+    </category>
+
+    <category>
+    <pattern>WHATS UP *</pattern>
+    <template><srai>HOW ARE YOU</srai></template>
+    </category>
+
+    <category>
+    <pattern>GIVE DEFINITION OF *</pattern>
+    <template>
+        <set name="word"><star/></set>
+        <get name="word"/>
+    </template>
+    </category>
+
+      <category>
+    <pattern>WHAT GOES WITH *</pattern>
+    <template>
+      <think>
+        <set name="item"><star/></set>
+      </think>
+      <condition name="prolog_response">
+        <li value="unknown">Sorry, I couldn't find what goes with <get name="item"/>.</li>
+        <li> You can pair <get name="item"/> with <get name="prolog_response"/>. </li>
+      </condition>
+    </template>
+  </category>
+
+  <!-- Accessory Suggestion -->
+  <category>
+    <pattern>ACCESSORY FOR *</pattern>
+    <template>
+      <think>
+        <set name="item"><star/></set>
+      </think>
+      <condition name="prolog_response">
+        <li value="unknown">Sorry, I couldn't find an accessory for <get name="item"/>.</li>
+        <li> The perfect accessory for <get name="item"/> is <get name="prolog_response"/>. </li>
+      </condition>
+    </template>
+  </category>
+
+</aiml>

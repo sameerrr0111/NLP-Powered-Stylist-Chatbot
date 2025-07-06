@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<category>
+  <pattern>RAINY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Opt for woody fragrances with hints of amber or oud, such as "Terre d'Hermès" or "Dior Sauvage." They provide a warm and grounding feel on a rainy day.</li>
+          <li>Fresh spicy scents like "Bleu de Chanel" work well to cut through the dampness and keep you feeling refreshed.</li>
+          <li>Try "Yves Saint Laurent La Nuit de L’Homme" for a mix of cardamom and cedarwood that suits the moody rain.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Floral and musky perfumes like "Chanel Coco Mademoiselle" bring a romantic and comforting touch to rainy weather.</li>
+          <li>Opt for scents with hints of vanilla or patchouli, such as "Dior Hypnotic Poison," for a warm, soothing aroma.</li>
+          <li>"Jo Malone English Pear & Freesia" provides a delicate, fresh scent perfect for rainy days.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>RAINY DAY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Woody and amber-based perfumes like "Tom Ford Oud Wood" are perfect for the cozy vibe of a rainy day.</li>
+          <li>Citrus and spicy notes like "Versace Eros Flame" help maintain a fresh and uplifting feel.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Warm floral scents such as "Lancôme La Vie Est Belle" can enhance the soothing atmosphere of a rainy day.</li>
+          <li>Opt for fruity and musky fragrances like "Gucci Bloom" to keep things light yet elegant.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>SNOWY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Rich, warm scents like "Tom Ford Tobacco Vanille" provide comfort and sophistication during snowy weather.</li>
+          <li>Try "Amouage Interlude Man" for a blend of spices, incense, and amber that complements the cold.</li>
+          <li>"Creed Aventus" offers a powerful mix of pineapple, bergamot, and musk that works well in wintery conditions.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Go for luxurious and warm fragrances like "Chanel No. 5" to feel cozy and elegant on a snowy day.</li>
+          <li>"Yves Saint Laurent Black Opium" combines coffee, vanilla, and floral notes for a bold winter choice.</li>
+          <li>Opt for oriental scents like "Tom Ford Black Orchid" to make a strong statement in the snow.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>SNOWY DAY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Warm and spicy perfumes like "Dior Fahrenheit" are ideal for keeping cozy on a snowy day.</li>
+          <li>Rich and leathery scents such as "Gucci Guilty Absolute" offer a touch of rugged elegance in the cold.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Floral and amber-based perfumes like "Dolce & Gabbana The One" bring warmth and sweetness to snowy weather.</li>
+          <li>"Givenchy L’Interdit" with its combination of tuberose, orange blossom, and patchouli is perfect for winter vibes.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>SUNNY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Fresh aquatic fragrances like "Giorgio Armani Acqua di Giò" are perfect for sunny days.</li>
+          <li>Citrus-based scents such as "Dolce & Gabbana Light Blue" keep things light and refreshing.</li>
+          <li>"Versace Pour Homme" offers a clean, crisp aroma that works wonderfully under the sun.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Fruity and floral scents like "Marc Jacobs Daisy" are perfect for a bright sunny day.</li>
+          <li>"Dolce & Gabbana Light Blue for Women" offers a citrusy and breezy fragrance that’s ideal for the heat.</li>
+          <li>Fresh and green perfumes such as "Jo Malone Wild Bluebell" capture the essence of a sunny afternoon.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>SUNNY DAY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Light, citrusy perfumes like "Chanel Allure Homme Sport" are ideal for sunny weather.</li>
+          <li>Fresh woody fragrances such as "Hermès Terre d’Hermès Eau Très Fraîche" work well under the sun.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Opt for breezy floral scents like "Estée Lauder Beautiful Magnolia" for a fresh sunny-day vibe.</li>
+          <li>"Chloé Eau de Parfum" with its fresh rose notes is perfect for warm and sunny weather.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>WINDY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Earthy fragrances like "Issey Miyake L’Eau d’Issey Pour Homme" hold up well in windy conditions.</li>
+          <li>Go for "Bvlgari Man in Black," a bold mix of spices and leather for a strong presence in the breeze.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Powdery floral scents such as "Narciso Rodriguez for Her" are great for windy days.</li>
+          <li>Go for a woody and musky perfume like "Tom Ford White Suede" to add depth and elegance to a windy atmosphere.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>WINDY DAY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Spicy and woody fragrances like "Viktor & Rolf Spicebomb" are great for windy days.</li>
+          <li>"Prada L’Homme" offers a sophisticated, fresh scent that holds up well against the wind.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Woody floral fragrances like "Gucci Flora" create a long-lasting impression on windy days.</li>
+          <li>"Maison Francis Kurkdjian Baccarat Rouge 540" is a luxurious choice for a breezy day.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+</aiml>

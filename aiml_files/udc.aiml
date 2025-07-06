@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+    <category>
+        <pattern>*</pattern>
+        <template>
+            <random>
+                <li>Got it!</li>
+                <li>Sounds good!</li>
+                <li>Okay, cool!</li>
+                <li>Awesome!</li>
+                <li>Great to hear!</li>
+                <li>Perfect!</li>
+                <li>All right!</li>
+                <li>Nice!</li>
+                <li>Understood!</li>
+                <li>Cool!</li>
+            </random>
+        </template>
+    </category>
+
+</aiml>

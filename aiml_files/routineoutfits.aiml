@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+<category>
+  <pattern>TODAY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Try a classic white t-shirt with blue jeans, white sneakers, and a simple wristwatch—timeless and effortlessly cool.</li>
+          <li>A formal blue shirt paired with tan chinos, brown loafers, and a leather belt will give you a sharp and polished vibe.</li>
+          <li>How about a black hoodie with grey joggers, black trainers, and a backpack? Perfect for a relaxed day out.</li>
+          <li>A polo shirt with shorts, flip-flops, and a pair of sunglasses sounds great for a casual summer look.</li>
+          <li>A blazer over a plain tee with tailored trousers and loafers is perfect for a smart-casual evening.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Wear a printed kurta with white trousers, strappy sandals, and a statement necklace for an elegant yet effortless look.</li>
+          <li>Go for a long embroidered shirt with cigarette pants, block heels, and a tote bag—it’s classy and comfortable.</li>
+          <li>A plain lawn shirt paired with denim jeans, white sneakers, and a denim jacket is the perfect blend of casual and chic.</li>
+          <li>How about a peplum top with a lehenga skirt, traditional khussas, and statement earrings for a bold and beautiful vibe?</li>
+          <li>Try a frock-style kurti with capri pants, flat sandals, and colorful bangles—it’s fun, playful, and vibrant.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>PARTY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>A slim-fit navy suit with a white shirt, black oxford shoes, and a classic tie is perfect for a formal party.</li>
+          <li>Try a floral printed shirt with dark jeans, loafers, and a leather bracelet for a semi-casual look.</li>
+          <li>A velvet blazer over a black t-shirt, chinos, and Chelsea boots will make you stand out at a party.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Go for a silk saree with a contrasting blouse, statement earrings, and metallic heels—it’s timeless and elegant.</li>
+          <li>A cocktail dress with stilettos, a clutch bag, and a sparkling necklace is perfect for an evening party.</li>
+          <li>Wear an embellished anarkali suit with high heels and chandelier earrings for a traditional festive vibe.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>WORK</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Try a light blue dress shirt with grey trousers, black oxfords, and a leather belt for a sharp office look.</li>
+          <li>A polo shirt with khakis and brown loafers works great for a smart-casual workplace.</li>
+          <li>A tailored blazer over a plain white shirt, dark trousers, and brogues is always a professional choice.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Wear a cotton kurta with tailored trousers, flats, and a neutral handbag for a polished look.</li>
+          <li>A button-down blouse with wide-leg trousers, block heels, and a minimalist watch makes for a chic office outfit.</li>
+          <li>A long tunic with slim pants, a scarf, and kitten heels is a great mix of comfort and style.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>OFFICE</pattern>
+  <template><srai>WORK</srai></template>
+</category>
+
+<category>
+  <pattern>JOB</pattern>
+  <template><srai>WORK</srai></template>
+</category>
+
+<category>
+  <pattern>JOGGING</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>A sleeveless workout tee, breathable shorts, and running shoes are all you need for the gym.</li>
+          <li>Go for a dri-fit t-shirt with joggers, sports socks, and training shoes to stay comfy during workouts.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>A tank top with high-waist leggings, running shoes, and a headband is perfect for the gym.</li>
+          <li>Wear a moisture-wicking t-shirt with capri leggings and cross-training shoes for an effective session.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>GYM</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>A sleeveless workout tee, breathable shorts, and running shoes are all you need for the gym.</li>
+          <li>Go for a dri-fit t-shirt with joggers, sports socks, and training shoes to stay comfy during workouts.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>A tank top with high-waist leggings, running shoes, and a headband is perfect for the gym.</li>
+          <li>Wear a moisture-wicking t-shirt with capri leggings and cross-training shoes for an effective session.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>FRIEND WEDDING</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>A crisp kurta pajama in deep hues like navy or emerald green with a waistcoat and loafers will keep things classy yet comfortable.</li>
+          <li>Try a smart blazer over a dress shirt with tailored trousers and brogues—it’s modern and perfect for a wedding.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>A brightly colored chiffon saree with minimal jewelry and kitten heels is a timeless and elegant option for a friend’s wedding.</li>
+          <li>How about a heavily embroidered anarkali suit paired with statement earrings and embellished flats? It’s a stylish yet easy-to-wear choice.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>WEDDING</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>A crisp kurta pajama in deep hues like navy or emerald green with a waistcoat and loafers will keep things classy yet comfortable.</li>
+          <li>Try a smart blazer over a dress shirt with tailored trousers and brogues—it’s modern and perfect for a wedding.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>A brightly colored chiffon saree with minimal jewelry and kitten heels is a timeless and elegant option for a friend’s wedding.</li>
+          <li>How about a heavily embroidered anarkali suit paired with statement earrings and embellished flats? It’s a stylish yet easy-to-wear choice.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>INTERVIEW</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>A light blue dress shirt with navy trousers and black Oxford shoes is a safe, polished choice for any interview.</li>
+          <li>Consider a grey blazer over a white shirt, paired with black dress pants and a leather belt. Keep it professional but not overdone.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>A fitted blazer over a plain blouse with ankle-length trousers and closed-toe pumps makes for a clean, professional look.</li>
+          <li>How about a formal kurta with neutral-toned pants and low block heels? Add a minimal necklace for a polished touch.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>BIRTHDAY PARTY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>A casual plaid shirt paired with jeans and sneakers is a great look for a chill birthday party.</li>
+          <li>You could wear a smart polo shirt with chinos and loafers—it’s comfy and stylish for any casual celebration.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>A floral maxi dress with strappy sandals and simple earrings is an effortless yet beautiful outfit for a birthday party.</li>
+          <li>Go for a knee-length kurta with embroidered detailing, paired with skinny jeans and ballet flats—it’s fun and festive without being over the top.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>BIRTHDAY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>A casual plaid shirt paired with jeans and sneakers is a great look for a chill birthday party.</li>
+          <li>You could wear a smart polo shirt with chinos and loafers—it’s comfy and stylish for any casual celebration.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>A floral maxi dress with strappy sandals and simple earrings is an effortless yet beautiful outfit for a birthday party.</li>
+          <li>Go for a knee-length kurta with embroidered detailing, paired with skinny jeans and ballet flats—it’s fun and festive without being over the top.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+</aiml>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+<category>
+  <pattern>SUMMER</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>A cotton polo shirt with khaki shorts and flip-flops is perfect for staying cool.</li>
+          <li>Wear a lightweight linen shirt with chinos and slip-on loafers for a breezy summer day.</li>
+          <li>A plain white tee with denim shorts and casual sneakers is great for beating the heat.</li>
+          <li>Try a short-sleeve button-up shirt with rolled-up chinos and espadrilles for an effortlessly cool vibe.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Go for a lawn kurta with loose shalwar and sandals. A crossbody bag adds a touch of flair.</li>
+          <li>Pair a flowy maxi dress with a cropped denim jacket and sneakers for a casual summer look.</li>
+          <li>Style a cotton kurti with straight pants and accessorize with a floppy hat and slide sandals.</li>
+          <li>Wear a printed lawn suit with ankle-strap flats and a pair of trendy sunglasses for an easy summer look.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<category>
+  <pattern>WINTER</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>A thick knit sweater with dark jeans and leather boots is a classic winter look.</li>
+          <li>Layer a puffer jacket over a hoodie, paired with joggers and high-top sneakers for ultimate comfort.</li>
+          <li>Try a wool coat with a turtleneck, chinos, and Chelsea boots for a polished winter vibe.</li>
+          <li>Go for a fleece-lined denim jacket, thermal shirt, and boots. Don’t forget gloves!</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Wear a long kameez with wool leggings, a shawl, and ankle boots for cozy winter vibes.</li>
+          <li>Try a peplum-style kurti over straight pants, a leather jacket, and boots to stay warm yet stylish.</li>
+          <li>Pair a velvet suit with a knitted shawl and accessorize with a belt to add structure to the outfit.</li>
+          <li>Go for a long woolen frock with leggings, a trench coat, and knee-high boots for a perfect winter fusion look.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<category>
+  <pattern>AUTUMN</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Layer a warm flannel shirt over a plain tee, paired with chinos and leather boots. Add a scarf for those crisp autumn mornings.</li>
+          <li>Go for a crewneck sweater with dark jeans and Chelsea boots. A classic leather belt will elevate the look.</li>
+          <li>Try a bomber jacket with joggers and sleek sneakers for a relaxed yet stylish autumn vibe.</li>
+          <li>A tailored blazer with a turtleneck, paired with corduroy trousers and loafers, is perfect for a polished autumn day.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Style a mustard-yellow kurta with cigarette pants and a lightweight patterned shawl. Add ankle boots for a chic fusion look.</li>
+          <li>Go for a printed lawn suit with a cropped denim jacket and block-heeled sandals for a modern twist.</li>
+          <li>Pair a straight-cut shalwar kameez with a leather belt around the waist and accessorize with hoop earrings. Finish with ballet flats.</li>
+          <li>Try a short frock-style kurti over skinny jeans, paired with ankle boots and a crossbody bag for an effortless fusion vibe.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<category>
+  <pattern>SPRING</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Try a pastel-colored button-up shirt with chinos and loafers for a fresh spring look.</li>
+          <li>A light denim jacket over a striped tee with beige shorts and white sneakers is a perfect casual outfit.</li>
+          <li>Go for a lightweight cardigan with a polo shirt and rolled-up jeans. Add sunglasses to complete the look.</li>
+          <li>Style a casual blazer with a plain tee, paired with khaki pants and slip-on sneakers for a smart yet relaxed vibe.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Pair a floral embroidered kurta with straight pants, a cropped cardigan, and strappy flats for a touch of spring elegance.</li>
+          <li>Go for a lightweight cotton suit in pastel shades, styled with white sneakers and a tote bag for a trendy fusion look.</li>
+          <li>Wear a peplum kurti with culottes and accessorize with a denim scarf. Add block heels to complete the outfit.</li>
+          <li>Try a lawn dress with a cropped leather jacket and ankle boots for an edgy yet spring-ready look.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+
+
+</aiml>

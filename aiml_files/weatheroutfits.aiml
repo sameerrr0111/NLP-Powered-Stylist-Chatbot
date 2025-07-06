@@ -1,0 +1,368 @@
+<!--
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+<category>
+  <pattern>RAINY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Wear a waterproof jacket over a hoodie, paired with joggers and water-resistant sneakers. Don’t forget an umbrella!</li>
+          <li>Go for a raincoat with slim-fit jeans and waterproof boots. A baseball cap can also help in light rain.</li>
+          <li>A lightweight windbreaker with chinos and slip-resistant shoes is a practical yet stylish choice.</li>
+          <li>Layer a flannel shirt under a rainproof trench coat, with dark jeans and leather boots to stay dry and sharp.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Style a knee-length kurti with slim trousers, a raincoat, and waterproof ankle boots. Carry a chic umbrella for the perfect rainy-day vibe.</li>
+          <li>Go for a shalwar kameez in dark tones paired with a cropped denim jacket and slip-on waterproof shoes.</li>
+          <li>Wear a short frock-style tunic over leggings, a lightweight poncho, and ankle boots to stay dry yet stylish.</li>
+          <li>Pair a printed lawn suit with a trench coat and add block heels. Don’t forget to carry a colorful umbrella!</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+
+<category>
+  <pattern>RAINY DAY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Wear a waterproof jacket with jeans and rain boots. Don’t forget to carry an umbrella!</li>
+          <li>How about a lightweight hoodie, joggers, and water-resistant sneakers? Perfect for braving the rain.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>A trench coat with ankle-length pants and waterproof boots will keep you dry and stylish.</li>
+          <li>Pair a raincoat with slim-fit jeans and comfortable slip-on shoes. Don’t forget to carry a chic umbrella!</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<category>
+  <pattern>SNOWY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Layer a parka over a thermal shirt, with snow boots and thick gloves for maximum warmth.</li>
+          <li>A heavy wool coat with a scarf, corduroy pants, and waterproof boots is great for snowy weather.</li>
+          <li>Wear a puffer jacket with insulated pants and snow boots. Don’t forget a beanie and gloves!</li>
+          <li>A fleece-lined hoodie, waterproof trousers, and high-top boots will keep you cozy in the snow.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Pair a long wool coat with a printed shawl, leggings, and snow boots. Add a beanie for extra warmth.</li>
+          <li>Wear a velvet kurta with warm churidar pants, a puffer jacket, and fur-lined ankle boots for a snowy-day chic.</li>
+          <li>Go for a long cape over a shalwar kameez, paired with leather boots and a knitted scarf for a trendy look.</li>
+          <li>Try a heavy embroidered suit with a woolen jacket, thick leggings, and knee-high boots to combat the cold in style.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>SNOWY DAY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Layer a parka over a thermal shirt, with snow boots and thick gloves for maximum warmth.</li>
+          <li>A heavy wool coat with a scarf, corduroy pants, and waterproof boots is great for snowy weather.</li>
+          <li>Wear a puffer jacket with insulated pants and snow boots. Don’t forget a beanie and gloves!</li>
+          <li>A fleece-lined hoodie, waterproof trousers, and high-top boots will keep you cozy in the snow.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Pair a long wool coat with a printed shawl, leggings, and snow boots. Add a beanie for extra warmth.</li>
+          <li>Wear a velvet kurta with warm churidar pants, a puffer jacket, and fur-lined ankle boots for a snowy-day chic.</li>
+          <li>Go for a long cape over a shalwar kameez, paired with leather boots and a knitted scarf for a trendy look.</li>
+          <li>Try a heavy embroidered suit with a woolen jacket, thick leggings, and knee-high boots to combat the cold in style.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<category>
+  <pattern>SUNNY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>A light cotton t-shirt paired with cargo shorts and slip-on sneakers. Don’t forget sunglasses!</li>
+          <li>Wear a polo shirt with linen trousers and loafers for a fresh and polished sunny-day vibe.</li>
+          <li>Go for a pastel shirt with rolled-up chinos and leather sandals to keep cool and stylish.</li>
+          <li>A sleeveless vest over a casual shirt, with denim shorts and espadrilles, is perfect for soaking up the sun.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Style a lawn kurta with printed palazzo pants and strappy sandals. Add a floppy hat for some sunny-day flair.</li>
+          <li>Try a short frock-style tunic with culottes and accessorize with oversized sunglasses and a tote bag.</li>
+          <li>Pair a cotton shalwar kameez with a lightweight scarf and block heels. Add a straw hat for a chic touch.</li>
+          <li>Wear a pastel-colored kurti with slim-fit trousers, slide sandals, and minimal jewelry for an elegant sunny-day look.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>SUNNY DAY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>A light cotton t-shirt paired with cargo shorts and slip-on sneakers. Don’t forget sunglasses!</li>
+          <li>Wear a polo shirt with linen trousers and loafers for a fresh and polished sunny-day vibe.</li>
+          <li>Go for a pastel shirt with rolled-up chinos and leather sandals to keep cool and stylish.</li>
+          <li>A sleeveless vest over a casual shirt, with denim shorts and espadrilles, is perfect for soaking up the sun.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Style a lawn kurta with printed palazzo pants and strappy sandals. Add a floppy hat for some sunny-day flair.</li>
+          <li>Try a short frock-style tunic with culottes and accessorize with oversized sunglasses and a tote bag.</li>
+          <li>Pair a cotton shalwar kameez with a lightweight scarf and block heels. Add a straw hat for a chic touch.</li>
+          <li>Wear a pastel-colored kurti with slim-fit trousers, slide sandals, and minimal jewelry for an elegant sunny-day look.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>WINDY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Layer a windbreaker over a cotton shirt, paired with slim-fit jeans and sneakers for a casual yet windproof look.</li>
+          <li>Go for a lightweight jacket with cargo pants and slip-resistant boots to handle the breeze in style.</li>
+          <li>Wear a knitted sweater under a bomber jacket, paired with chinos and loafers to stay warm and comfortable.</li>
+          <li>A hooded jacket with joggers and sturdy sneakers will keep you ready for the gusty weather.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Pair a long cardigan with a belted trench coat, slim-fit trousers, and ankle boots for a classy windy-day look.</li>
+          <li>Wear a midi-length kurti with palazzos, a lightweight shawl, and comfortable flats to stay breezy yet stylish.</li>
+          <li>Try a leather jacket over a printed tunic, with leggings and block heels for a chic yet practical outfit.</li>
+          <li>Layer a woolen poncho over a cotton suit and pair it with knee-high boots to keep warm and fashionable.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>WINDY DAY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Layer a windbreaker over a cotton shirt, paired with slim-fit jeans and sneakers for a casual yet windproof look.</li>
+          <li>Go for a lightweight jacket with cargo pants and slip-resistant boots to handle the breeze in style.</li>
+          <li>Wear a knitted sweater under a bomber jacket, paired with chinos and loafers to stay warm and comfortable.</li>
+          <li>A hooded jacket with joggers and sturdy sneakers will keep you ready for the gusty weather.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Pair a long cardigan with a belted trench coat, slim-fit trousers, and ankle boots for a classy windy-day look.</li>
+          <li>Wear a midi-length kurti with palazzos, a lightweight shawl, and comfortable flats to stay breezy yet stylish.</li>
+          <li>Try a leather jacket over a printed tunic, with leggings and block heels for a chic yet practical outfit.</li>
+          <li>Layer a woolen poncho over a cotton suit and pair it with knee-high boots to keep warm and fashionable.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>COLD</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Layer a thermal shirt under a wool sweater, with a heavy coat, jeans, and insulated boots for ultimate warmth.</li>
+          <li>Wear a puffer jacket with a scarf, corduroy pants, and waterproof boots to stay cozy in the cold.</li>
+          <li>A fleece-lined hoodie paired with insulated trousers and snow boots is perfect for chilly days.</li>
+          <li>Go for a down jacket, thermal leggings under chinos, and high-top boots to combat the cold weather in style.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Pair a long wool coat with a knitted scarf, leggings, and fur-lined ankle boots for a chic yet warm look.</li>
+          <li>Wear a thermal kurta with churidar leggings, a shawl, and a puffer jacket for a cozy outfit.</li>
+          <li>Try a velvet tunic with fleece-lined pants, a trench coat, and knee-high boots to stay warm and fashionable.</li>
+          <li>Layer a wool cape over a printed suit with a thick scarf, thermal leggings, and leather boots for a trendy cold-weather look.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>COLD DAY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Layer a thermal shirt under a wool sweater, with a heavy coat, jeans, and insulated boots for ultimate warmth.</li>
+          <li>Wear a puffer jacket with a scarf, corduroy pants, and waterproof boots to stay cozy in the cold.</li>
+          <li>A fleece-lined hoodie paired with insulated trousers and snow boots is perfect for chilly days.</li>
+          <li>Go for a down jacket, thermal leggings under chinos, and high-top boots to combat the cold weather in style.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Pair a long wool coat with a knitted scarf, leggings, and fur-lined ankle boots for a chic yet warm look.</li>
+          <li>Wear a thermal kurta with churidar leggings, a shawl, and a puffer jacket for a cozy outfit.</li>
+          <li>Try a velvet tunic with fleece-lined pants, a trench coat, and knee-high boots to stay warm and fashionable.</li>
+          <li>Layer a wool cape over a printed suit with a thick scarf, thermal leggings, and leather boots for a trendy cold-weather look.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+
+<category>
+  <pattern>FOGGY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Layer a waterproof jacket over a hoodie, paired with jeans and slip-resistant boots to navigate the foggy day safely.</li>
+          <li>Wear a thermal sweater with a trench coat, dark chinos, and leather boots. Add a scarf for extra warmth and style.</li>
+          <li>A lightweight puffer jacket with joggers and water-resistant sneakers is perfect for the misty weather.</li>
+          <li>Combine a wool coat with a beanie, gloves, and thick pants to stay warm and comfortable on a foggy day.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Style a long trench coat with leggings, waterproof ankle boots, and a printed scarf for a cozy foggy-day outfit.</li>
+          <li>Wear a wool shawl over a shalwar kameez, paired with block-heeled boots to keep warm and chic.</li>
+          <li>Try a fleece-lined jacket over a velvet kurta with churidar leggings and fur-lined boots for a trendy yet practical look.</li>
+          <li>Pair a poncho with slim-fit trousers and ankle-length boots. Add a colorful scarf to brighten up the foggy day.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>FOGGY DAY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Layer a waterproof jacket over a hoodie, paired with jeans and slip-resistant boots to navigate the foggy day safely.</li>
+          <li>Wear a thermal sweater with a trench coat, dark chinos, and leather boots. Add a scarf for extra warmth and style.</li>
+          <li>A lightweight puffer jacket with joggers and water-resistant sneakers is perfect for the misty weather.</li>
+          <li>Combine a wool coat with a beanie, gloves, and thick pants to stay warm and comfortable on a foggy day.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Style a long trench coat with leggings, waterproof ankle boots, and a printed scarf for a cozy foggy-day outfit.</li>
+          <li>Wear a wool shawl over a shalwar kameez, paired with block-heeled boots to keep warm and chic.</li>
+          <li>Try a fleece-lined jacket over a velvet kurta with churidar leggings and fur-lined boots for a trendy yet practical look.</li>
+          <li>Pair a poncho with slim-fit trousers and ankle-length boots. Add a colorful scarf to brighten up the foggy day.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+
+<category>
+  <pattern>HOT</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Wear a light cotton t-shirt with linen shorts and slip-on sandals. Don’t forget sunglasses and sunscreen!</li>
+          <li>A short-sleeved shirt paired with chinos and loafers is perfect for staying cool yet stylish in the heat.</li>
+          <li>Try a sleeveless vest with denim shorts and sneakers. Add a wide-brimmed hat for extra sun protection.</li>
+          <li>Go for a polo shirt with lightweight trousers and comfortable leather sandals for a relaxed hot-day vibe.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Style a lawn kurta with lightweight palazzo pants and strappy sandals. Add a sunhat to beat the heat.</li>
+          <li>Wear a printed cotton shalwar kameez with block heels and carry a lightweight scarf to stay breezy.</li>
+          <li>Pair a sleeveless kurti with capri pants and flat sandals for a chic hot-day outfit.</li>
+          <li>Go for a pastel-colored frock-style tunic with culottes and accessorize with sunglasses and a tote bag.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>HOT DAY</pattern>
+  <template>
+    <condition name="gender">
+      <li value="male">
+        <random>
+          <li>Wear a light cotton t-shirt with linen shorts and slip-on sandals. Don’t forget sunglasses and sunscreen!</li>
+          <li>A short-sleeved shirt paired with chinos and loafers is perfect for staying cool yet stylish in the heat.</li>
+          <li>Try a sleeveless vest with denim shorts and sneakers. Add a wide-brimmed hat for extra sun protection.</li>
+          <li>Go for a polo shirt with lightweight trousers and comfortable leather sandals for a relaxed hot-day vibe.</li>
+        </random>
+      </li>
+      <li value="female">
+        <random>
+          <li>Style a lawn kurta with lightweight palazzo pants and strappy sandals. Add a sunhat to beat the heat.</li>
+          <li>Wear a printed cotton shalwar kameez with block heels and carry a lightweight scarf to stay breezy.</li>
+          <li>Pair a sleeveless kurti with capri pants and flat sandals for a chic hot-day outfit.</li>
+          <li>Go for a pastel-colored frock-style tunic with culottes and accessorize with sunglasses and a tote bag.</li>
+        </random>
+      </li>
+    </condition>
+  </template>
+</category>
+
+
+</aiml>
+-->

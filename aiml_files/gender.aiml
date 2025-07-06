@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+<category>
+  <pattern>MEN</pattern>
+  <template>
+    <think><set name="gender">male</set></think>
+    Got it! We’ll focus on men’s styles. What can I help you with today?
+  </template>
+</category>
+
+<category>
+  <pattern>WOMEN</pattern>
+  <template>
+    <think><set name="gender">female</set></think>
+    Perfect! Let’s dive into women’s styles. What outfit ideas are you looking for?
+  </template>
+</category>
+
+<category>
+  <pattern>MENS</pattern>
+  <template>
+    <think><set name="gender">male</set></think>
+    Got it! We’ll focus on men’s styles. What can I help you with today?
+  </template>
+</category>
+
+<category>
+  <pattern>WOMENS</pattern>
+  <template>
+    <think><set name="gender">female</set></think>
+    Perfect! Let’s dive into women’s styles. What outfit ideas are you looking for?
+  </template>
+</category>
+
+<category>
+  <pattern>MALE</pattern>
+  <template>
+    <think><set name="gender">male</set></think>
+    Got it! We’ll focus on men’s styles. What can I help you with today?
+  </template>
+</category>
+
+<category>
+  <pattern>FEMALE</pattern>
+  <template>
+    <think><set name="gender">female</set></think>
+    Perfect! Let’s dive into women’s styles. What outfit ideas are you looking for?
+  </template>
+</category>
+
+<category>
+  <pattern>I AM A MAN</pattern>
+  <template>
+    <think><set name="gender">male</set></think>
+    Thanks for letting me know! Let’s explore men’s styles together. What can I help you with?
+  </template>
+</category>
+
+<category>
+  <pattern>I AM A WOMAN</pattern>
+  <template>
+    <think><set name="gender">female</set></think>
+    Awesome! I’ll tailor my suggestions for women’s styles. What are you looking for today?
+  </template>
+</category>
+
+<category>
+  <pattern>MEN FASHION</pattern>
+  <template>
+    <think><set name="gender">male</set></think>
+    Men’s fashion it is! What outfit ideas do you need help with?
+  </template>
+</category>
+
+<category>
+  <pattern>WOMEN FASHION</pattern>
+  <template>
+    <think><set name="gender">female</set></think>
+    Women’s fashion—great choice! What can I style for you today?
+  </template>
+</category>
+
+<category>
+  <pattern>FOR MEN</pattern>
+  <template>
+    <think><set name="gender">male</set></think>
+    Got it! Let’s focus on men’s outfits. How can I assist you?
+  </template>
+</category>
+
+<category>
+  <pattern>FOR WOMEN</pattern>
+  <template>
+    <think><set name="gender">female</set></think>
+    Perfect! Let’s talk women’s fashion. What do you have in mind?
+  </template>
+</category>
+
+<category>
+  <pattern>I AM A GUY</pattern>
+  <template>
+    <think><set name="gender">male</set></think>
+    Thanks for sharing! Let’s focus on men’s fashion. What can I help you with?
+  </template>
+</category>
+
+<category>
+  <pattern>I AM A GIRL</pattern>
+  <template>
+    <think><set name="gender">female</set></think>
+    Great! Women’s styles it is. What outfit ideas are you looking for today?
+  </template>
+</category>
+
+<category>
+  <pattern>STYLE FOR MEN</pattern>
+  <template>
+    <think><set name="gender">male</set></think>
+    Men’s style it is! How can I help you look your best today?
+  </template>
+</category>
+
+<category>
+  <pattern>STYLE FOR WOMEN</pattern>
+  <template>
+    <think><set name="gender">female</set></think>
+    Women’s fashion coming up! What are you thinking about wearing today?
+  </template>
+</category>
+
+<category>
+  <pattern>MEN PLEASE</pattern>
+  <template>
+    <think><set name="gender">male</set></think>
+    Got it! Men’s styles coming your way. What outfit ideas do you need?
+  </template>
+</category>
+
+<category>
+  <pattern>WOMEN PLEASE</pattern>
+  <template>
+    <think><set name="gender">female</set></think>
+    Perfect choice! Let’s dive into women’s fashion. What can I help you style?
+  </template>
+</category>
+
+<category>
+  <pattern>GUY</pattern>
+  <template>
+    <think><set name="gender">male</set></think>
+    Alright! I’ll focus on men’s styles for you. What can I help you with today?
+  </template>
+</category>
+
+<category>
+  <pattern>LADY</pattern>
+  <template>
+    <think><set name="gender">female</set></think>
+    Got it! Women’s fashion it is. What can I style for you today?
+  </template>
+</category>
+
+<category>
+  <pattern>IM A DUDE FOR OUTFIT INSPIRATION</pattern>
+  <template>
+    <think><set name="gender">male</set></think>
+    Cool! Men’s styles coming up. How can I help with your wardrobe today?
+  </template>
+</category>
+
+<category>
+  <pattern>IM A WOMAN LOOKING FOR OUTFIT INSPIRATION</pattern>
+  <template>
+    <think><set name="gender">female</set></think>
+    Awesome! Let’s work on some fabulous women’s outfit ideas. What are you looking for?
+  </template>
+</category>
+
+<category>
+  <pattern>BOY</pattern>
+  <template>
+    <think><set name="gender">male</set></think>
+    Noted! Let’s dive into men’s fashion. What outfit ideas are you looking for?
+  </template>
+</category>
+
+<category>
+  <pattern>I AM A BOY</pattern>
+  <template>
+    <think><set name="gender">male</set></think>
+    Noted! Let’s dive into men’s fashion. What outfit ideas are you looking for?
+  </template>
+</category>
+
+<category>
+  <pattern>GIRL</pattern>
+  <template>
+    <think><set name="gender">female</set></think>
+    Excellent! Women’s style it is. What can I help you style today?
+  </template>
+</category>
+
+<category>
+  <pattern>GENTLEMEN</pattern>
+  <template>
+    <think><set name="gender">male</set></think>
+    Gentlemen’s fashion—great choice! What outfit suggestions do you need?
+  </template>
+</category>
+
+<category>
+  <pattern>LADIES</pattern>
+  <template>
+    <think><set name="gender">female</set></think>
+    Lovely! Women’s styles are my specialty. What can I style for you today?
+  </template>
+</category>
+
+<category>
+  <pattern>IM A GUY LOOKING FOR FASHION ADVICE</pattern>
+  <template>
+    <think><set name="gender">male</set></think>
+    Great! Let’s focus on men’s fashion. What outfit ideas can I assist you with?
+  </template>
+</category>
+
+<category>
+  <pattern>IM A WOMAN LOOKING FOR FASHION ADVICE</pattern>
+  <template>
+    <think><set name="gender">female</set></think>
+    Fabulous! Let’s work on some great women’s outfit suggestions. What’s the occasion?
+  </template>
+</category>
+
+<category>
+  <pattern>DO YOU HAVE OUTFITS FOR MEN *</pattern>
+  <template>
+    <think><set name="gender">male</set></think>
+    Yes, I do! Let’s talk about men’s outfits. What’s the event or mood today?
+  </template>
+</category>
+
+<category>
+  <pattern>DO YOU HAVE OUTFITS FOR WOMEN *</pattern>
+  <template>
+    <think><set name="gender">female</set></think>
+    Of course! Women’s styles are my forte. What kind of outfit ideas are you after?
+  </template>
+</category>
+
+<category>
+  <pattern>CAN YOU HELP ME WITH MENS FASHION *</pattern>
+  <template>
+    <think><set name="gender">male</set></think>
+    Absolutely! Let’s craft the perfect men’s outfit. What’s the occasion or vibe?
+  </template>
+</category>
+
+<category>
+  <pattern>CAN YOU HELP ME WITH WOMENS FASHION *</pattern>
+  <template>
+    <think><set name="gender">female</set></think>
+    Sure thing! Let’s create a stunning outfit for you. What’s the plan for today?
+  </template>
+</category>
+
+<category>
+  <pattern>I NEED MENS CLOTHES</pattern>
+  <template>
+    <think><set name="gender">male</set></think>
+    Got it! Let’s find the perfect men’s outfit. What kind of look are you going for?
+  </template>
+</category>
+
+<category>
+  <pattern>I NEED WOMENS CLOTHES</pattern>
+  <template>
+    <think><set name="gender">female</set></think>
+    Women’s clothes, coming right up! What’s the occasion or style preference?
+  </template>
+</category>
+
+<category>
+  <pattern>MENS LOOKS PLEASE</pattern>
+  <template>
+    <think><set name="gender">male</set></think>
+    Men’s looks—on it! Let’s work on something stylish. What’s the vibe for today?
+  </template>
+</category>
+
+<category>
+  <pattern>WOMENS LOOKS PLEASE</pattern>
+  <template>
+    <think><set name="gender">female</set></think>
+    Women’s looks? You got it! Let’s create something chic. What’s the occasion?
+  </template>
+</category>
+
+
+</aiml>

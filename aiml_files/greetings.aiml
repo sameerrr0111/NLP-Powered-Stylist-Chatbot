@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+  <category>
+      <pattern>BOT INTRO</pattern>
+      <template>
+    <random>
+      <li>Hello! I'm Bella, your personal stylist. Are we styling for men or women?</li>
+      <li>Hi there! I'm Bella, your fashion buddy. Let me know—are you looking for men’s or women’s outfit ideas?</li>
+      <li>Hey! I'm Bella, your style expert. Quick question—should I focus on men’s or women’s styles for you?</li>
+      <li>I’m Bella, your personal stylist here to help you shine! Before we begin, are we styling for men or women?</li>
+      <li>I’m Bella, your go-to stylist for all your outfit questions! First, let me know—should I focus on men’s or women’s styles?</li>
+      <li>I’m Bella, your fashion guide ready to elevate your style! Let’s start—are we talking men’s or women’s fashion today?</li>
+      <li>I’m Bella, your stylist here to keep your wardrobe on point! Quick question—are we picking outfits for men or women?</li>
+      <li>I’m Bella, let’s style your day together with flair! Tell me, are we styling for men or women?</li>
+    </random>
+  </template>
+  </category>
+  
+  <category>
+    <pattern>BOT HELP REPLIES</pattern>
+    <template>
+        <random>
+            <li>I can help you put together the perfect outfit! Just tell me the occasion, and I’ll work my magic!</li>
+            <li>Looking for a style upgrade? I’m here to help you find the best looks that fit your vibe!</li>
+            <li>I can style you head-to-toe! Whether it’s casual, formal, or something in between, I’ve got you covered!</li>
+            <li>Need some styling advice? I’ll help you find your perfect look for any occasion!</li>
+            <li>I’m here to create outfits that make you feel like a million bucks! Tell me what you need, and I’ll help you shine!</li>
+        </random>
+    </template>
+</category>
+
+  
+<category>
+      <pattern>WHAT IS YOUR NAME</pattern>
+        <template>
+            <srai>BOT INTRO</srai>
+        </template>
+  </category>  
+
+<category>
+      <pattern>WHAT IS YOUR NAME *</pattern>
+        <template>
+            <srai>WHAT IS YOUR NAME</srai>
+        </template>
+  </category>
+
+  <category>
+      <pattern>MY NAME IS *</pattern>
+        <template>
+            <think><set name = "Username"><star/></set></think>
+            Nice to meet you <get name = "Username"/><srai>GREETING LINES</srai>
+        </template>
+  </category> 
+      
+  <category>
+      <pattern>MY REAL NAME IS *</pattern>
+        <template>
+            <think><set name = "Username"><star/></set></think>
+            Nice to meet you <get name = "Username"/><srai>GREETING LINES</srai>
+        </template>
+  </category>  
+  
+  <category>
+      <pattern>YOU CAN CALL ME *</pattern>
+        <template>
+            Oh, what a nickname <think><set name = "nickname"><star/></set></think>!!
+        </template>
+  </category> 
+  
+  <category>
+      <pattern>WHAT IS MY NAME ^</pattern>
+        <template>
+            Your real name is <get name = "Username"/>!!
+        </template>
+  </category>
+  
+  <category>
+      <pattern>WHAT IS MY REAL NAME *</pattern>
+        <template>
+            Your real name is <get name = "Username"/>!!
+        </template>
+  </category>
+  
+  <category>
+      <pattern>WHAT IS MY NICKNAME *</pattern>
+        <template>
+            Your nickname is <get name = "nickname"/>!!
+        </template>
+  </category>
+  
+  <category>
+      <pattern>HOW CAN YOU HELP ME</pattern>
+        <template>
+            <srai>BOT HELP REPLIES</srai>
+            </template>
+  </category> 
+  
+  <category>
+      <pattern>HOW CAN YOU HELP ME *</pattern>
+        <template>
+            <srai>HOW CAN YOU HELP ME</srai>
+            </template>
+  </category> 
+  
+</aiml>
