@@ -1,0 +1,190 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+    <!-- ================================================================= -->
+    <!-- 1. MASTER QUERY HANDLERS                                          -->
+    <!-- These pass the variables to your Python script                    -->
+    <!-- ================================================================= -->
+
+    <category>
+        <pattern>WHO IS THE * OF *</pattern>
+        <template>
+            <think>
+                <set name="query_rel"><star/></set>
+                <set name="query_person"><star index="2"/></set>
+            </think>
+            Let me check the family records...
+        </template>
+    </category>
+
+    <!-- Handle: "Who is father of Ali" (without 'the') -->
+    <category>
+        <pattern>WHO IS * OF *</pattern>
+        <template>
+            <srai>WHO IS THE <star/> OF <star index="2"/></srai>
+        </template>
+    </category>
+
+    <!-- Handle Possessive: "Who is Ali's father" -->
+    <category>
+        <pattern>WHO IS * S *</pattern>
+        <template>
+            <srai>WHO IS THE <star index="2"/> OF <star/></srai>
+        </template>
+    </category>
+
+    <!-- ================================================================= -->
+    <!-- 2. WESTERN RELATIONSHIP MAPPINGS                                  -->
+    <!-- Maps English terms to your Prolog predicates                      -->
+    <!-- ================================================================= -->
+
+    <category><pattern>WHO IS THE DAD OF *</pattern><template><srai>WHO IS THE FATHER OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE MOM OF *</pattern><template><srai>WHO IS THE MOTHER OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE BRO OF *</pattern><template><srai>WHO IS THE BROTHER OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE SIS OF *</pattern><template><srai>WHO IS THE SISTER OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE KID OF *</pattern><template><srai>WHO IS THE CHILD OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE GRANDPA OF *</pattern><template><srai>WHO IS THE GRANDFATHER OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE GRANDMA OF *</pattern><template><srai>WHO IS THE GRANDMOTHER OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE PATERNAL UNCLE OF *</pattern><template><srai>WHO IS THE P_UNCLE OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE PATERNAL AUNT OF *</pattern><template><srai>WHO IS THE P_AUNT OF <star/></srai></template></category>
+
+    <!-- ================================================================= -->
+    <!-- 3. DESI/EASTERN RELATIONSHIP MAPPINGS                             -->
+    <!-- Maps Urdu/Hindi terms to your specific KB predicates              -->
+    <!-- ================================================================= -->
+
+    <!-- Parents -->
+    <category><pattern>WHO IS THE ABBU OF *</pattern><template><srai>WHO IS THE ABU OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE AMMI OF *</pattern><template><srai>WHO IS THE AMI OF <star/></srai></template></category>
+    
+    <!-- Uncles/Aunts -->
+    <category><pattern>WHO IS THE TAYYA OF *</pattern><template><srai>WHO IS THE TAYA OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE CHACHU OF *</pattern><template><srai>WHO IS THE CHACHA OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE MAMOO OF *</pattern><template><srai>WHO IS THE MAMA OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE MAMU OF *</pattern><template><srai>WHO IS THE MAMA OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE KHALAH OF *</pattern><template><srai>WHO IS THE KHALA OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE PHUPHO OF *</pattern><template><srai>WHO IS THE P_AUNT OF <star/></srai></template></category>
+    
+    <!-- In-Laws -->
+    <category><pattern>WHO IS THE SUSRA OF *</pattern><template><srai>WHO IS THE SASUR OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE SAASU OF *</pattern><template><srai>WHO IS THE SAAS OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE DAMAD OF *</pattern><template><srai>WHO IS THE DAMAD OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE BAHU OF *</pattern><template><srai>WHO IS THE BAHU OF <star/></srai></template></category>
+    
+    <!-- Siblings/Cousins/Nephews -->
+    <category><pattern>WHO IS THE BHAIYA OF *</pattern><template><srai>WHO IS THE BHAI OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE BAJI OF *</pattern><template><srai>WHO IS THE BEHN OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE API OF *</pattern><template><srai>WHO IS THE BEHN OF <star/></srai></template></category>
+    
+    <!-- Next Generation -->
+    <category><pattern>WHO IS THE BHATIJA OF *</pattern><template><srai>WHO IS THE BHATIJA OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE BHATIJI OF *</pattern><template><srai>WHO IS THE BHATIJI OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE BHANJA OF *</pattern><template><srai>WHO IS THE BHANJA OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE BHANJI OF *</pattern><template><srai>WHO IS THE BHANJI OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE POTA OF *</pattern><template><srai>WHO IS THE POTA OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE POTI OF *</pattern><template><srai>WHO IS THE POTI OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE NAWASA OF *</pattern><template><srai>WHO IS THE NAWASA OF <star/></srai></template></category>
+    <category><pattern>WHO IS THE NAWASI OF *</pattern><template><srai>WHO IS THE NAWASI OF <star/></srai></template></category>
+    
+    <!-- ================================================================= -->
+    <!-- 4. GENDER & ATTRIBUTES                                            -->
+    <!-- ================================================================= -->
+
+    <category>
+        <pattern>IS * MALE</pattern>
+        <template>
+            <think>
+                <set name="query_rel">male</set>
+                <set name="query_person"><star/></set>
+            </think>
+            Checking gender records for <star/>...
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS * FEMALE</pattern>
+        <template>
+            <think>
+                <set name="query_rel">female</set>
+                <set name="query_person"><star/></set>
+            </think>
+            Checking gender records for <star/>...
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHEN WAS * BORN</pattern>
+        <template>
+            <think><set name="dob_person"><star/></set></think>
+            Checking birth date...
+        </template>
+    </category>
+    
+    <category>
+        <pattern>HOW OLD IS *</pattern>
+        <template>
+            <think><set name="age_person"><star/></set></think>
+            Calculating age...
+        </template>
+    </category>
+
+    <!-- ================================================================= -->
+    <!-- 5. LEARNING (TEACHING THE BOT)                                    -->
+    <!-- ================================================================= -->
+
+    <!-- Case 1: "Ali is father of Sameer" -->
+    <category>
+        <pattern>* IS * OF *</pattern>
+        <template>
+            <think>
+                <set name="learn_p1"><star/></set>
+                <set name="learn_rel"><star index="2"/></set>
+                <set name="learn_p2"><star index="3"/></set>
+            </think>
+            I have learned that <star/> is the <star index="2"/> of <star index="3"/>.
+        </template>
+    </category>
+
+    <!-- Case 2: "Ali is the father of Sameer" -->
+    <category>
+        <pattern>* IS THE * OF *</pattern>
+        <template>
+            <srai><star/> IS <star index="2"/> OF <star index="3"/></srai>
+        </template>
+    </category>
+    
+    <!-- Case 3: "Sameer is male" (CRUCIAL for 'son' queries to work) -->
+    <category>
+        <pattern>* IS MALE</pattern>
+        <template>
+            <think>
+                <set name="other_gender_person"><star/></set>
+                <set name="other_gender">male</set>
+            </think>
+            Got it. <star/> is male.
+        </template>
+    </category>
+
+    <category>
+        <pattern>* IS FEMALE</pattern>
+        <template>
+            <think>
+                <set name="other_gender_person"><star/></set>
+                <set name="other_gender">female</set>
+            </think>
+            Got it. <star/> is female.
+        </template>
+    </category>
+
+    <!-- Case 4: DOB -->
+    <category>
+        <pattern>THE DOB OF * IS *</pattern>
+        <template>
+            <think>
+                <set name="other_dob_person"><star/></set>
+                <set name="other_dob"><star index="2"/></set>
+            </think>
+            I have saved the Date of Birth for <star/>.
+        </template>
+    </category>
+
+</aiml>

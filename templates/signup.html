@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Bella The Stylist Bot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css">
+    <!-- Updated Icon -->
+    <link rel='icon' type='image/x-icon' href='https://img.freepik.com/free-vector/graident-ai-robot-vectorart_78370-4114.jpg?ga=GA1.1.662513375.1735894928&semt=ais_hybrid'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,300' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 1em;
+            background: #27ae60;
+            color: #32465a;
+            transform: scale(0.75); 
+            transform-origin: center;
+        }
+
+        .signup-box {
+            width: 400px;
+            padding: 40px;
+            background: #E6EAEA;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .signup-box img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            border: 3px solid #2c3e50;
+        }
+
+        .signup-box h2 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .signup-box input[type="text"],
+        .signup-box input[type="email"],
+        .signup-box input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: large;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            background: #fff;
+            box-sizing: border-box;
+            color: #32465a;
+            font-family: "Source Sans Pro", sans-serif;
+        }
+
+        .signup-box input:focus {
+            border-color: #27ae60;
+            outline: none;
+        }
+
+        .signup-box button {
+            width: 100%;
+            padding: 15px;
+            margin: 20px 0 10px;
+            font-size: large;
+            border: none;
+            border-radius: 3px;
+            background: #2c3e50; 
+            color: #f5f5f5;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .signup-box button:hover {
+            background: #435f7a;
+        }
+
+        .signup-box a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #27ae60;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .signup-box a:hover {
+            text-decoration: underline;
+        }
+
+        .signup-box p {
+            display: inline-block;
+            color: #32465a;
+            margin-right: 5px;
+        }
+
+        .show-password-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 10px 0;
+        }
+
+        .show-password-wrapper input[type="checkbox"] {
+            transform: scale(1.3);
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .show-password-wrapper label {
+            font-size: 1em;
+            color: #32465a;
+            cursor: pointer;
+        }
+
+        .error, .notification {
+            font-size: 1em;
+            padding: 12px;
+            border-radius: 3px;
+            margin: 10px 0;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .notification {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-box">
+        <!-- Updated Image Source -->
+        <img src="https://img.freepik.com/free-vector/graident-ai-robot-vectorart_78370-4114.jpg?ga=GA1.1.662513375.1735894928&semt=ais_hybrid" alt="Bot Image">
+        <h2>Sign Up</h2>
+        <form action="/signup" method="POST">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" id="signup-password" name="password" placeholder="Password" required>
+            <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm Password" required>
+
+            <div class="show-password-wrapper">
+                <input type="checkbox" id="show-password-signup" onclick="togglePasswordSignup()">
+                <label for="show-password-signup">Show Password</label>
+            </div>
+            
+            <button type="submit">Sign Up</button>
+        </form>
+
+        {% if request.args.get('error') == 'invalid_email' %}
+        <p class="error">Invalid email format.</p>
+        {% elif request.args.get('error') == 'email_exists' %}
+        <p class="error">Email already exists.</p>
+        {% elif request.args.get('success') == 'signup' %}
+        <p class="notification">Sign up successful! Redirecting...</p>
+        {% endif %}
+
+        <div style="margin-top: 20px;">
+            <p>Already have an account?</p>
+            <a class="login-link" href="/login">Log in</a>
+        </div>
+    </div>
+
+    <script>
+        function togglePasswordSignup() {
+            var passwordField = document.getElementById("signup-password");
+            var confirmPasswordField = document.getElementById("confirm-password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                confirmPasswordField.type = "text";
+            } else {
+                passwordField.type = "password";
+                confirmPasswordField.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>

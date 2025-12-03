@@ -1,3 +1,5 @@
 flask
 python-aiml
 nltk
+pytholog
+uvicorn
