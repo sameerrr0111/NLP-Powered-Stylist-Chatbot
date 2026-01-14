@@ -3,3 +3,4 @@ python-aiml
 nltk
 pytholog
 uvicorn
+neo4j
