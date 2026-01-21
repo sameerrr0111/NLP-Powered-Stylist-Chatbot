@@ -14,6 +14,9 @@ driver = GraphDatabase.driver(URI, auth=AUTH)
 def createTextNode(Text):
     query = """
     MERGE (a:Agent {name: 'bot_agent'})
+    MERGE (ra:Agent {name: 'relation_agent'})
+    MERGE (a)-[:HAS_SUB_AGENT]->(ra)  // <--- This creates the hierarchy link
+    
     CREATE (t:SensoryMemory:Text {content: $text, time: timestamp()})
     MERGE (a)-[:has_text]->(t)
     RETURN elementId(t) AS text_id
