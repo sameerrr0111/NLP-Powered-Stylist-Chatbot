@@ -30,6 +30,13 @@ def store_user_ip(username, ip_address):
 # --- SENSORY MEMORY (bot_agent) ---
 
 def createTextNode(username, Text):
+    creator_query = """
+    MERGE (s:Creator {name: 'Sameer'})
+    MERGE (a:Agent {name: 'bot_agent'})
+    MERGE (s)-[:CREATED]->(a)
+    MERGE (a)-[:CREATED_BY]->(s)
+    """
+
     # REMOVED: No more relation_agent
     query = """
     MERGE (a:Agent {name: 'bot_agent'})
@@ -44,6 +51,7 @@ def createTextNode(username, Text):
     RETURN elementId(t) AS text_id
     """
     with driver.session() as session:
+        session.run(creator_query)
         result = session.run(query, username=username, text=Text)
         return result.single()["text_id"]
 

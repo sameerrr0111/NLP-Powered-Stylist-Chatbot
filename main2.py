@@ -82,15 +82,21 @@ def get_bot_response():
     query = request.args.get('msg', '').strip()
     if not query:
         return ":)"
-
+        
+    updateSensoryMemory(username, query)
     # ===================================================================
     # ✨ NEW FIX: Directly handle the "what is my name" question
     # ===================================================================
-    # Normalize the query to be case-insensitive and handle variations
     normalized_query = query.lower().strip().replace("?", "")
+    
+    # Check for User's Name
     if normalized_query in ["what is my name", "what's my name", "tell me my name"]:
-        # Respond directly with the username from the session and stop further processing.
         return f"Your name is {username}."
+    
+    # Check for Creator's Name
+    creator_triggers = ["who is your creator", "who created you", "who created this chat", "who made you"]
+    if any(trigger in normalized_query for trigger in creator_triggers):
+        return "My creator is Sameer."
 
     # 1. Look for the current user's gender
     user_gender = session.get('user_gender') or get_stored_gender(username)
@@ -104,7 +110,7 @@ def get_bot_response():
         bot.setPredicate("gender", "unknown", sessionID=username)
 
 
-    updateSensoryMemory(username, query)
+
     
 
     # 2. 🔥 NEW: Process PAM (Backend Dictionary/Definitions)
