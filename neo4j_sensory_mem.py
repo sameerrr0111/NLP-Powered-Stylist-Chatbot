@@ -1,13 +1,18 @@
 # neo4j_sensory_mem.py
 import nltk
 from neo4j import GraphDatabase
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 # Setup NLTK
 nltk.download('punkt')
+nltk.download('vader_lexicon')
 
 URI = "neo4j://127.0.0.1:7687"
 AUTH = ("neo4j", "12345678") 
 driver = GraphDatabase.driver(URI, auth=AUTH)
+
+
+sia = SentimentIntensityAnalyzer()
 
 # --- SENSORY MEMORY (bot_agent) ---
 
@@ -30,22 +35,37 @@ def createTextNode(username, Text):
         result = session.run(query, username=formatted_username, text=Text)
         return result.single()["text_id"]
 
-def createSentenceNode(text_id, Text, username): # ADDED username parameter
+def createSentenceNode(text_id, Text, username):
     sentences = nltk.sent_tokenize(Text)
     prev_s = None
-    formatted_username = f"user {username}" # Use formatted username
+    formatted_username = f"user {username}"
     with driver.session() as session:
         for s_content in sentences:
-            # MODIFIED: Sentence nodes now have an 'owner'
+            # --- NEW: Perform sentiment analysis here ---
+            sentiment_scores = sia.polarity_scores(s_content)
+            compound_score = sentiment_scores['compound']
+            if compound_score >= 0.05:
+                sentiment_label = "Positive"
+            elif compound_score <= -0.05:
+                sentiment_label = "Negative"
+            else:
+                sentiment_label = "Neutral"
+
+            # MODIFIED: MERGE query now creates the node with sentiment properties
             session.run("""
                 MATCH (t) WHERE elementId(t) = $t_id
-                // MERGE now includes the owner for isolation
-                MERGE (s:SensoryMemory:Sentence {content: $s_content, owner: $username})
+                // MERGE now includes owner and sentiment properties from the start
+                MERGE (s:SensoryMemory:Sentence {
+                    content: $s_content, 
+                    owner: $username, 
+                    sentiment_score: $score, 
+                    sentiment_label: $label
+                })
                 MERGE (t)-[:has_sentence]->(s)
-            """, t_id=text_id, s_content=s_content, username=formatted_username)
+            """, t_id=text_id, s_content=s_content, username=formatted_username, 
+                 score=compound_score, label=sentiment_label)
 
             if prev_s:
-                # MODIFIED: MATCH must now find owner-specific sentences
                 session.run("""
                     MATCH (s1:SensoryMemory:Sentence {content: $p, owner: $username}), 
                           (s2:SensoryMemory:Sentence {content: $c, owner: $username})

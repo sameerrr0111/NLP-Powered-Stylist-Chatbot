@@ -2,6 +2,7 @@
 import nltk
 from nltk.corpus import wordnet
 from neo4j import GraphDatabase
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 # Setup Neo4j Connection (using your same credentials)
 URI = "neo4j://127.0.0.1:7687"
@@ -11,6 +12,29 @@ driver = GraphDatabase.driver(URI, auth=AUTH)
 # Ensure WordNet and POS Tagger are downloaded
 nltk.download('wordnet')
 nltk.download('averaged_perceptron_tagger')
+nltk.download('vader_lexicon')
+
+# Initialize the sentiment analyzer once
+sia = SentimentIntensityAnalyzer()
+
+# --- NEW, FOCUSED FUNCTION ---
+def analyze_full_text_sentiment(username, text):
+    """Analyzes sentiment of the full text block and updates the :Text node."""
+    full_text_sentiment = sia.polarity_scores(text)
+    compound_score = full_text_sentiment['compound']
+    
+    if compound_score >= 0.05: sentiment_label = "Positive"
+    elif compound_score <= -0.05: sentiment_label = "Negative"
+    else: sentiment_label = "Neutral"
+
+    formatted_username = f"user {username}"
+    with driver.session() as session:
+        # This query remains the same, targeting the :Text node
+        session.run("""
+            MATCH (u:User {name: $username})-[:has_text]->(t:Text {content: $text})
+            SET t.sentiment_score = $score, t.sentiment_label = $label
+        """, username=formatted_username, text=text, score=compound_score, label=sentiment_label)
+
 
 def get_word_definition(word):
     """Fetches the first definition from WordNet for a given word."""

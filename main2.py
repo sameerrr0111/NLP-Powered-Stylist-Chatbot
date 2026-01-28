@@ -7,7 +7,7 @@ from glob import glob
 import aiml
 import nltk
 from neo4j_sensory_mem import updateSensoryMemory, store_relation, query_relation, updateUserGender, get_stored_gender
-from pam import process_pam
+from pam import process_pam, analyze_full_text_sentiment
 
 
 # Download necessary NLTK resources safely
@@ -105,6 +105,10 @@ def get_bot_response():
     except Exception as e:
         print(f"PAM Error: {e}")
 
+    try:
+        analyze_full_text_sentiment(username, query)
+    except Exception as e:
+        print(f"PAM Error (Sentiment): {e}")
 
     keywords = extract_keywords(query)
 
