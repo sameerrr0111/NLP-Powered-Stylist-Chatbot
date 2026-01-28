@@ -100,7 +100,8 @@ def get_bot_response():
 
     # 2. 🔥 NEW: Process PAM (Backend Dictionary/Definitions)
     try:
-        process_pam(query)
+        # MODIFIED: Pass the 'username' to process_pam
+        process_pam(username, query)
     except Exception as e:
         print(f"PAM Error: {e}")
 

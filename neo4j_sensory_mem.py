@@ -9,13 +9,12 @@ URI = "neo4j://127.0.0.1:7687"
 AUTH = ("neo4j", "12345678") 
 driver = GraphDatabase.driver(URI, auth=AUTH)
 
-# --- ASSIGNMENT 3: SENSORY MEMORY (bot_agent) ---
+# --- SENSORY MEMORY (bot_agent) ---
 
 def createTextNode(username, Text):
+    # REMOVED: No more relation_agent
     query = """
     MERGE (a:Agent {name: 'bot_agent'})
-    MERGE (ra:Agent {name: 'relation_agent'})
-    MERGE (a)-[:HAS_SUB_AGENT]->(ra)
     
     // Create/Match the specific User node
     MERGE (u:User {name: $username})
@@ -27,92 +26,94 @@ def createTextNode(username, Text):
     RETURN elementId(t) AS text_id
     """
     with driver.session() as session:
-        # We prepend 'user ' as requested: "user Ali"
         formatted_username = f"user {username}"
         result = session.run(query, username=formatted_username, text=Text)
         return result.single()["text_id"]
 
-def createSentenceNode(text_id, Text):
+def createSentenceNode(text_id, Text, username): # ADDED username parameter
     sentences = nltk.sent_tokenize(Text)
     prev_s = None
+    formatted_username = f"user {username}" # Use formatted username
     with driver.session() as session:
         for s_content in sentences:
+            # MODIFIED: Sentence nodes now have an 'owner'
             session.run("""
                 MATCH (t) WHERE elementId(t) = $t_id
-                MERGE (s:SensoryMemory:Sentence {content: $s_content})
+                // MERGE now includes the owner for isolation
+                MERGE (s:SensoryMemory:Sentence {content: $s_content, owner: $username})
                 MERGE (t)-[:has_sentence]->(s)
-            """, t_id=text_id, s_content=s_content)
+            """, t_id=text_id, s_content=s_content, username=formatted_username)
 
             if prev_s:
+                # MODIFIED: MATCH must now find owner-specific sentences
                 session.run("""
-                    MATCH (s1:SensoryMemory:Sentence {content: $p}), (s2:SensoryMemory:Sentence {content: $c})
+                    MATCH (s1:SensoryMemory:Sentence {content: $p, owner: $username}), 
+                          (s2:SensoryMemory:Sentence {content: $c, owner: $username})
                     MERGE (s1)-[:next_sentence]->(s2)
-                """, p=prev_s, c=s_content)
+                """, p=prev_s, c=s_content, username=formatted_username)
             prev_s = s_content
 
-def createWordNode(Text):
+def createWordNode(Text, username): # ADDED username parameter
     sentences = nltk.sent_tokenize(Text)
+    formatted_username = f"user {username}" # Use formatted username
     with driver.session() as session:
         for s_content in sentences:
             words = nltk.word_tokenize(s_content)
             prev_w = None
             for w_content in words:
+                # MODIFIED: MATCH and MERGE now include the owner
                 session.run("""
-                    MATCH (s:SensoryMemory:Sentence {content: $s_content})
-                    MERGE (w:SensoryMemory:Word {content: $w_content})
+                    MATCH (s:SensoryMemory:Sentence {content: $s_content, owner: $username})
+                    // MERGE now includes the owner for isolation
+                    MERGE (w:SensoryMemory:Word {content: $w_content, owner: $username})
                     MERGE (s)-[:has_word]->(w)
-                """, s_content=s_content, w_content=w_content)
+                """, s_content=s_content, w_content=w_content, username=formatted_username)
 
                 if prev_w:
+                    # MODIFIED: MATCH must now find owner-specific words
                     session.run("""
-                        MATCH (w1:SensoryMemory:Word {content: $pw}), (w2:SensoryMemory:Word {content: $cw})
+                        MATCH (w1:SensoryMemory:Word {content: $pw, owner: $username}), 
+                              (w2:SensoryMemory:Word {content: $cw, owner: $username})
                         MERGE (w1)-[:next_word]->(w2)
-                    """, pw=prev_w, cw=w_content)
+                    """, pw=prev_w, cw=w_content, username=formatted_username)
                 prev_w = w_content
 
-# --- ASSIGNMENT 2: RELATIONSHIPS (relation_agent) ---
-
+# --- RELATIONSHIPS (Integrated) ---
 
 def store_relation(username, p1, rel_type, p2):
-    """
-    If p2 is 'my', link Word(p1) -> User(username)
-    Otherwise, link Word(p1) -> Word(p2)
-    """
     rel_name = f"is_{rel_type.lower()}"
     formatted_username = f"user {username}"
     
     with driver.session() as session:
         if p2.lower() == "my":
-            # Scenario: "Ali is my father" -> (Word:Ali)-[:is_father]->(User:user Olive)
+            # MODIFIED: MERGE on Word must include the owner
             query = f"""
             MATCH (u:User {{name: $username}})
-            MERGE (w1:SensoryMemory:Word {{content: $p1}})
+            MERGE (w1:SensoryMemory:Word {{content: $p1, owner: $username}})
             MERGE (w1)-[:{rel_name}]->(u)
             """
             session.run(query, username=formatted_username, p1=p1)
         else:
-            # Scenario: "Usman is father of Raza" -> (Word:Usman)-[:is_father]->(Word:Raza)
+            # MODIFIED: MERGE on both Words must include the owner
             query = f"""
-            MERGE (w1:SensoryMemory:Word {{content: $p1}})
-            MERGE (w2:SensoryMemory:Word {{content: $p2}})
+            MERGE (w1:SensoryMemory:Word {{content: $p1, owner: $username}})
+            MERGE (w2:SensoryMemory:Word {{content: $p2, owner: $username}})
             MERGE (w1)-[:{rel_name}]->(w2)
             """
-            session.run(query, p1=p1, p2=p2)
+            session.run(query, p1=p1, p2=p2, username=formatted_username)
 
 def query_relation(username, p_name, rel_type):
-    """
-    Checks if someone is the relation of the User OR another person
-    """
     rel_name = f"is_{rel_type.lower()}"
     formatted_username = f"user {username}"
     
+    # MODIFIED: All MATCH clauses must filter by owner
     query = f"""
-    // Check if searching for User's relative
-    OPTIONAL MATCH (subject:SensoryMemory:Word)-[:{rel_name}]->(u:User {{name: $username}})
+    // Check for user's relative (now includes owner check on the Word)
+    OPTIONAL MATCH (subject:SensoryMemory:Word {{owner: $username}})-[:{rel_name}]->(u:User {{name: $username}})
     WHERE $p_name = 'my'
     
-    // OR Check if searching for a third-party relative (e.g., father of Raza)
-    OPTIONAL MATCH (subject2:SensoryMemory:Word)-[:{rel_name}]->(target:SensoryMemory:Word {{content: $p_name}})
+    // Check for third-party relative (now includes owner check on all Words)
+    OPTIONAL MATCH (subject2:SensoryMemory:Word {{owner: $username}})-[:{rel_name}]->(target:SensoryMemory:Word {{content: $p_name, owner: $username}})
     
     RETURN coalesce(subject.content, subject2.content) AS result
     """
@@ -133,14 +134,12 @@ def get_stored_gender(username):
     with driver.session() as session:
         result = session.run(query, username=formatted_username)
         record = result.single()
-        # If gender is missing or is the default "Not Told", return None
         if record and record["gender"] and record["gender"] != "Not Told":
             return record["gender"]
         return None
         
 def updateSensoryMemory(username, Text):
+    # MODIFIED: Must pass username down to the sub-functions
     tid = createTextNode(username, Text)
-    createSentenceNode(tid, Text)
-    createWordNode(Text)
-
-
+    createSentenceNode(tid, Text, username)
+    createWordNode(Text, username)

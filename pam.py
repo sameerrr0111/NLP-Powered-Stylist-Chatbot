@@ -19,26 +19,27 @@ def get_word_definition(word):
         return synsets[0].definition()
     return None
 
-def process_pam(text):
+# MODIFIED: Function now requires 'username' to know which node to link
+def process_pam(username, text):
     """
     Identifies nouns in the text and links their Neo4j Word nodes 
     to a Definition node.
     """
     tokens = nltk.word_tokenize(text)
     tagged_words = nltk.pos_tag(tokens)
-
-    # Noun tags in NLTK start with 'NN' (NN, NNS, NNP, NNPS)
     nouns = [word for word, tag in tagged_words if tag.startswith('NN')]
+    
+    formatted_username = f"user {username}"
 
     with driver.session() as session:
         for noun in nouns:
             definition = get_word_definition(noun)
             
             if definition:
-                # Cypher query to link the existing Word node to a Definition node
+                # MODIFIED: The MATCH clause now finds the user's specific Word node
                 query = """
-                MATCH (w:SensoryMemory:Word {content: $noun})
+                MATCH (w:SensoryMemory:Word {content: $noun, owner: $username})
                 MERGE (d:Definition {text: $definition})
                 MERGE (w)-[:has_definition]->(d)
                 """
-                session.run(query, noun=noun, definition=definition)
+                session.run(query, noun=noun, definition=definition, username=formatted_username)
