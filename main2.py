@@ -6,7 +6,7 @@ from aiml import Kernel
 from glob import glob
 import aiml
 import nltk
-from neo4j_sensory_mem import updateSensoryMemory, store_relation, query_relation, updateUserGender, get_stored_gender
+from neo4j_sensory_mem import updateSensoryMemory, store_relation, query_relation, updateUserGender, get_stored_gender, store_user_ip
 from pam import process_pam, analyze_full_text_sentiment
 
 
@@ -171,7 +171,6 @@ def get_bot_response():
     rel = bot.getPredicate("learn_rel", sessionID=username)
     p2 = bot.getPredicate("learn_p2", sessionID=username)
 
-    print(f"DEBUG AIML Predicates: p1='{p1}', rel='{rel}', p2='{p2}'")
 
     if p1 and rel and p2:
         store_relation(username, p1, rel, p2)
@@ -239,7 +238,20 @@ def login():
         users = load_users()
         
         if email in users and users[email]["password"] == password:
-            session['user_name'] = users[email]["name"]
+            # 1. Get the user's name and store it in a local variable.
+            name = users[email]["name"]
+            # 2. Now, put that variable into the session.
+            session['user_name'] = name
+
+            try:
+                # Get the user's IP address from the request object
+                ip_address = request.remote_addr
+                # Call the function to store/update it in Neo4j
+                store_user_ip(name, ip_address)
+                print(f"Updated IP for user '{name}' to {ip_address}") # Optional: for server logs
+            except Exception as e:
+                print(f"Error updating user IP: {e}")
+            
             return redirect(url_for('home'))
         else:
             return redirect(url_for('login', error='invalid'))

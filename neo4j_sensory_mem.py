@@ -14,6 +14,20 @@ driver = GraphDatabase.driver(URI, auth=AUTH)
 
 sia = SentimentIntensityAnalyzer()
 
+def store_user_ip(username, ip_address):
+    """
+    Finds a user node and sets their IP address as a property.
+    This is typically called once upon user creation.
+    """
+    formatted_username = f"user {username}"
+    query = """
+    MERGE (u:User {name: $username})
+    SET u.ip_address = $ip
+    """
+    with driver.session() as session:
+        session.run(query, username=formatted_username, ip=ip_address)
+
+
 # --- SENSORY MEMORY (bot_agent) ---
 
 def createTextNode(username, Text):
