@@ -82,7 +82,16 @@ def get_bot_response():
     query = request.args.get('msg', '').strip()
     if not query:
         return ":)"
-    
+
+    # ===================================================================
+    # ✨ NEW FIX: Directly handle the "what is my name" question
+    # ===================================================================
+    # Normalize the query to be case-insensitive and handle variations
+    normalized_query = query.lower().strip().replace("?", "")
+    if normalized_query in ["what is my name", "what's my name", "tell me my name"]:
+        # Respond directly with the username from the session and stop further processing.
+        return f"Your name is {username}."
+
     # 1. Look for the current user's gender
     user_gender = session.get('user_gender') or get_stored_gender(username)
     

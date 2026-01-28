@@ -27,13 +27,12 @@ def analyze_full_text_sentiment(username, text):
     elif compound_score <= -0.05: sentiment_label = "Negative"
     else: sentiment_label = "Neutral"
 
-    formatted_username = f"user {username}"
     with driver.session() as session:
         # This query remains the same, targeting the :Text node
         session.run("""
             MATCH (u:User {name: $username})-[:has_text]->(t:Text {content: $text})
             SET t.sentiment_score = $score, t.sentiment_label = $label
-        """, username=formatted_username, text=text, score=compound_score, label=sentiment_label)
+        """, username=username, text=text, score=compound_score, label=sentiment_label)
 
 
 def get_word_definition(word):
@@ -52,7 +51,6 @@ def process_pam(username, text):
     tokens = nltk.word_tokenize(text)
     tagged_words = nltk.pos_tag(tokens) # This gives us a list like [('word', 'TAG'), ...]
     
-    formatted_username = f"user {username}"
 
     with driver.session() as session:
         # MODIFIED: We now loop through EVERY tagged word, not just nouns.
@@ -64,7 +62,7 @@ def process_pam(username, text):
             MATCH (w:SensoryMemory:Word {content: $word, owner: $username})
             SET w.pos_tag = $tag
             """
-            session.run(pos_query, word=word, tag=tag, username=formatted_username)
+            session.run(pos_query, word=word, tag=tag, username=username)
 
             # --- PRESERVED FEATURE: Add definition link for Nouns ---
             # We check if the tag from the current word is a noun.
@@ -79,4 +77,4 @@ def process_pam(username, text):
                     MERGE (w)-[:has_definition]->(d)
                     """
                     # We use 'word' from our loop as the noun content.
-                    session.run(def_query, noun=word, definition=definition, username=formatted_username)
+                    session.run(def_query, noun=word, definition=definition, username=username)
