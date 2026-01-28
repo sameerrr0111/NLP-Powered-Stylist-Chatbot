@@ -78,6 +78,29 @@
         </template>
     </category>
 
+    <category>
+        <pattern>* IS MY *</pattern>
+        <template>
+            <think>
+                <set name="learn_p1"><star index="1"/></set>
+                <set name="learn_rel"><star index="2"/></set>
+                <set name="learn_p2">my</set>
+            </think>
+            Got it! I have recorded that <star index="1"/> is your <star index="2"/>.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHO IS MY *</pattern>
+        <template>
+            <think>
+                <set name="query_rel"><star/></set>
+                <set name="query_person">my</set>
+            </think>
+            Searching my memory for your <star/>...
+        </template>
+    </category>
+    
     <!-- ======================= -->
     <!-- 3. LEARNING RELATIONSHIPS -->
     <!-- ======================= -->
@@ -118,4 +141,5 @@
         </template>
     </category>
 
+    
 </aiml>
