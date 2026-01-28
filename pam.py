@@ -19,27 +19,40 @@ def get_word_definition(word):
         return synsets[0].definition()
     return None
 
-# MODIFIED: Function now requires 'username' to know which node to link
+# MODIFIED: The entire function is enhanced but the signature remains the same.
 def process_pam(username, text):
     """
-    Identifies nouns in the text and links their Neo4j Word nodes 
-    to a Definition node.
+    Identifies POS tag for every word and links its Neo4j Word node to a 
+    Definition node if it is a noun.
     """
     tokens = nltk.word_tokenize(text)
-    tagged_words = nltk.pos_tag(tokens)
-    nouns = [word for word, tag in tagged_words if tag.startswith('NN')]
+    tagged_words = nltk.pos_tag(tokens) # This gives us a list like [('word', 'TAG'), ...]
     
     formatted_username = f"user {username}"
 
     with driver.session() as session:
-        for noun in nouns:
-            definition = get_word_definition(noun)
+        # MODIFIED: We now loop through EVERY tagged word, not just nouns.
+        for word, tag in tagged_words:
             
-            if definition:
-                # MODIFIED: The MATCH clause now finds the user's specific Word node
-                query = """
-                MATCH (w:SensoryMemory:Word {content: $noun, owner: $username})
-                MERGE (d:Definition {text: $definition})
-                MERGE (w)-[:has_definition]->(d)
-                """
-                session.run(query, noun=noun, definition=definition, username=formatted_username)
+            # --- NEW FEATURE: Add POS Tag to every Word node ---
+            # This query finds the user's specific word and sets its POS tag.
+            pos_query = """
+            MATCH (w:SensoryMemory:Word {content: $word, owner: $username})
+            SET w.pos_tag = $tag
+            """
+            session.run(pos_query, word=word, tag=tag, username=formatted_username)
+
+            # --- PRESERVED FEATURE: Add definition link for Nouns ---
+            # We check if the tag from the current word is a noun.
+            if tag.startswith('NN'):
+                definition = get_word_definition(word)
+                
+                if definition:
+                    # This is the original query to link a definition.
+                    def_query = """
+                    MATCH (w:SensoryMemory:Word {content: $noun, owner: $username})
+                    MERGE (d:Definition {text: $definition})
+                    MERGE (w)-[:has_definition]->(d)
+                    """
+                    # We use 'word' from our loop as the noun content.
+                    session.run(def_query, noun=word, definition=definition, username=formatted_username)
