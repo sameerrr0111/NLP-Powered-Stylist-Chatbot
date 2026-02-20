@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
+    <category>
+        <pattern>HONK COMMAND</pattern>
+        <template>Honk activated successfully!</template>
+    </category>
+    <category>
+        <pattern>RED LIGHT</pattern>
+        <template>🔴 Red light activated.</template>
+    </category>
+
+    <category>
+        <pattern>GREEN LIGHT</pattern>
+        <template>🟢 Green light activated.</template>
+    </category>
+
+    <category>
+        <pattern>YELLOW LIGHT</pattern>
+        <template>🟡 Yellow light activated.</template>
+    </category>
+
+    <category>
+        <pattern>SET TEMPERATURE LIMIT TO *</pattern>
+        <template>
+            Setting temperature limit to <star/> degrees.
+        </template>
+    </category>
+
+    <category>
+        <pattern>SET HUMIDITY LIMIT TO *</pattern>
+        <template>
+            Humidity threshold changed to <star/> percent.
+        </template>
+    </category>    
+
+    <category>
+        <pattern>SET SOIL LIMIT TO *</pattern>
+        <template>
+            Soil moisture limit updated to <star/>.
+        </template>
+    </category>
+
+    <category>
+        <pattern>SET LDR LIMIT TO *</pattern>
+        <template>
+            LDR brightness threshold set to <star/>.
+        </template>
+    </category>    
 
     <category>
         <pattern>*</pattern>
@@ -18,5 +64,7 @@
             </random>
         </template>
     </category>
+
+
 
 </aiml>

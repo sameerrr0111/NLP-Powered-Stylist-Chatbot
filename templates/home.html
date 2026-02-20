@@ -680,6 +680,88 @@
 #frame .content .message-input .wrap button:focus {
   outline: none;
 }
+
+/*
+   =============================
+   FLASH MESSAGES STYLING FIX
+   =============================
+*/
+.flash {
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+    box-sizing: border-box; /* Good practice for consistent sizing */
+
+    /* --- ADD/MODIFY THESE LINES --- */
+    position: fixed;     /* Position relative to the viewport */
+    top: 20px;           /* 20px from the top of the screen */
+    left: 50%;           /* Start from the horizontal center */
+    transform: translateX(-50%); /* Shift left by half its own width to truly center */
+    z-index: 1000;       /* Ensure it's on top of other content */
+    
+    width: 95%;          /* Responsive width */
+    max-width: 500px;    /* Max width for readability */
+    /* Remove any conflicting margin properties that try to center it within the flex parent */
+    margin: 0;           /* Explicitly reset margins */
+    /* --- END ADD/MODIFY --- */
+}
+.success { background-color: #d4edda; color: #155724; }
+.error { background-color: #f8d7da; color: #721c24; }
+
+/* ============================= */
+/* ACTIVATION PAGE STYLING FIX  */
+/* ============================= */
+
+.activation-container {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  width: 400px; /* Fixed width for the form itself */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  text-align: left;
+
+  /* --- ADD/MODIFY THESE LINES --- */
+  margin-top: 30px;    /* Add some vertical spacing */
+  margin-bottom: 30px; /* Add some vertical spacing */
+  margin-left: auto;   /* Center horizontally */
+  margin-right: auto;  /* Center horizontally */
+  display: block;      /* Ensure it behaves as a block element */
+  /* --- END ADD/MODIFY --- */
+}
+
+.activation-container h2 {
+  margin-bottom: 15px;
+}
+
+.activation-container p {
+  margin-bottom: 20px;
+}
+
+.activation-form div {
+  margin-bottom: 15px;
+}
+
+.activation-form input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.activation-form button {
+  width: 100%;
+  padding: 10px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.activation-form button:hover {
+  background: #219150;
+}
+
 </style></head><body>
 <!--
 
@@ -694,14 +776,33 @@ Codepen: https://codepen.io/emilcarlsson/
 Website: http://emilcarlsson.se/
 
 -->
+<!-- =============================================================== -->
+<!-- CHANGE 1: ADDED A SECTION TO DISPLAY FLASH MESSAGES            -->
+<!-- This will show messages like "Device Activated!" or "Invalid Code" -->
+<!-- =============================================================== -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="flash {{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<!-- =============================================================== -->
+<!-- CHANGE 2: ADDED CONDITIONAL LOGIC `if has_device`              -->
+<!-- This checks the variable from the backend to decide what to show -->
+<!-- =============================================================== -->
+{% if has_device %}
 
+<!-- =============================================================== -->
+<!-- YOUR ORIGINAL CHAT UI GOES HERE                                -->
+<!-- This part is only shown if the user has an activated device.    -->
+<!-- =============================================================== -->
 <div id="frame">
   <div id="sidepanel">
     <div id="profile">
       <div class="wrap">
-        <img id="profile-img" src="https://img.freepik.com/free-vector/graident-ai-robot-vectorart_78370-4114.jpg?ga=GA1.1.662513375.1735894928&semt=ais_hybrid"" />
-        <p>Bella The Stylist</p>
-
+        <img id="profile-img" src="https://img.freepik.com/free-vector/graident-ai-robot-vectorart_78370-4114.jpg?ga=GA1.1.662513375.1735894928&semt=ais_hybrid" class="online" alt="" />
+        <p>PlantBot</p>
       </div>
     </div>
     <div id="search">
@@ -710,52 +811,83 @@ Website: http://emilcarlsson.se/
     </div>
     <div id="contacts">
       <ul>
-        <li class="contact">
+        <li class="contact active">
           <div class="wrap">
             <span class="contact-status online"></span>
             <img src="https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-870.jpg?ga=GA1.1.662513375.1735894928&semt=ais_hybrid" alt="" />
             <div class="meta">
               <p class="name">{{ name }}</p>
-              <p class="preview">User</p>
+              <p class="preview">Ready to chat...</p>
             </div>
           </div>
         </li>
       </ul>
     </div>
     <div id="bottom-bar">
-      <button id="addcontact"><i class="fa fa-user-plus fa-fw" aria-hidden="true"></i> <span>Add contact</span></button>
-      <button id="settings" onclick="window.location.href='/logout'"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> 
+      <!-- CHANGE 3: FIXED THE LOGOUT BUTTON -->
+      <a href="{{ url_for('logout') }}" style="text-decoration: none; color: white; width: 100%;">
+          <button id="settings" style="width: 100%;">
+              <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> 
+              <span>Logout</span>
+          </button>
+      </a>
     </div>
   </div>
   <div class="content">
     <div class="contact-profile">
       <img src="https://img.freepik.com/free-vector/graident-ai-robot-vectorart_78370-4114.jpg?ga=GA1.1.662513375.1735894928&semt=ais_hybrid" alt="" />
-      <p>Bella The Stylist</p>
+      <p>PlantBot</p>
     </div>
     <div class="messages">
       <ul>
-        <li class="sent">
-          <img src="https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-870.jpg?ga=GA1.1.662513375.1735894928&semt=ais_hybrid" alt="" />
-          <p>Hello am you.. Please write ur message to continue the chat.</p>
-
-        </li>
         <li class="replies">
           <img src="https://img.freepik.com/free-vector/graident-ai-robot-vectorart_78370-4114.jpg?ga=GA1.1.662513375.1735894928&semt=ais_hybrid" alt="" />
-          <p>Hello! I am bella your stylist bot!</p>
+          <p>Hello! I am PlantBot. How can I help you with your plants today?</p>
         </li>
       </ul>
     </div>
     <div class="message-input">
       <div class="wrap">
-          <div id="userInput">
-              <input id="textInput" type="text" name="msg" placeholder="Write your message..." />
-              <i class="fa fa-paperclip attachment" aria-hidden="true"></i>
-              <button class="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-          </div>
+          <input id="textInput" type="text" name="msg" placeholder="Write your message..." />
+          <i class="fa fa-paperclip attachment" aria-hidden="true"></i>
+          <button class="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
       </div>
     </div>
   </div>
 </div>
+
+{% else %}
+
+<!-- =============================================================== -->
+<!-- CHANGE 4: ADDED THE ACTIVATION FORM                            -->
+<!-- This is shown if the user does NOT have an activated device.     -->
+<!-- =============================================================== -->
+<div class="activation-container">
+    <h2>Activate Your Device</h2>
+    <p>Welcome, {{ name }}! To start monitoring your plants, please activate your ESP device.</p>
+    <form class="activation-form" action="{{ url_for('activate') }}" method="post">
+        <div>
+            <label for="device_id">Device ID:</label><br>
+            <input type="text" id="device_id" name="device_id" value="{{ default_device_id }}" readonly>
+        </div>
+        <div>
+            <label for="activation_code">Activation Code:</label><br>
+            <input type="text" id="activation_code" name="activation_code" required placeholder="Enter your code here">
+        </div>
+        <div>
+            <label for="plant_name">Plant Name:</label><br>
+            <input type="text" id="plant_name" name="plant_name" required placeholder="e.g., My Office Fern">
+        </div>
+        <button type="submit">Activate Device</button>
+    </form>
+    <br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</div>
+
+{% endif %}
+<!-- End of conditional logic -->
+
+
 <script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 <script >
 $(".messages").animate({ scrollTop: $(document).height() }, "fast");
@@ -793,21 +925,38 @@ $("#status-options ul li").click(function() {
 });
 
 function newMessage() {
-      message = $(".message-input input").val();
-      if($.trim(message) == '') {
+    message = $(".message-input input").val();
+    if($.trim(message) == '') {
         return false;
-      }
+    }
 
-
-      $('<li class="sent"><img src="https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-870.jpg?ga=GA1.1.662513375.1735894928&semt=ais_hybrid" alt="" /><p>' + message + '</p></li>').appendTo($('.messages ul'));
-      $.get("/get", { msg: message }).done(function(data) {
-        $('<li class="replies"><img src="https://miro.medium.com/max/327/1*paQ7E6f2VyTKXHpR-aViFg.png" alt="" /><p>' + data + '</p></li>').appendTo($('.messages ul'));
-        });
-      $('.message-input input').val(null);
-      $('.contact.active .preview').html('<span>You: </span>' + message);
-      $(".messages").animate({ scrollTop: $(document).height() }, "fast");
-
+    // Append the user's message to the chat
+    $('<li class="sent"><img src="https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-870.jpg?ga=GA1.1.662513375.1735894928&semt=ais_hybrid" alt="" /><p>' + message + '</p></li>').appendTo($('.messages ul'));
+    
+    // Send message to the Flask backend and get a response
+    $.get("/get", { msg: message }).done(function(data) {
+        $('<li class="replies"><img src="https://img.freepik.com/free-vector/graident-ai-robot-vectorart_78370-4114.jpg?ga=GA1.1.662513375.1735894928&semt=ais_hybrid" alt="" /><p>' + data + '</p></li>').appendTo($('.messages ul'));
+        $(".messages").animate({ scrollTop: $(".messages")[0].scrollHeight }, "fast");
+    });
+    
+    $('.message-input input').val(null);
+    $('.contact.active .preview').html('<span>You: </span>' + message);
+    $(".messages").animate({ scrollTop: $(".messages")[0].scrollHeight }, "fast");
 };
+
+$('.submit').click(function() {
+  newMessage();
+});
+
+$(window).on('keydown', function(e) {
+  if (e.which == 13) {
+    newMessage();
+    return false;
+  }
+});
+
+// Auto-scroll to the bottom of the messages on page load
+$(".messages").animate({ scrollTop: $(".messages")[0].scrollHeight }, "fast");
 
 function getBotResponse() {
       var rawText = $("#textInput").val();

@@ -4,3 +4,6 @@ nltk
 pytholog
 uvicorn
 neo4j
+Flask
+werkzeug
+uuid
