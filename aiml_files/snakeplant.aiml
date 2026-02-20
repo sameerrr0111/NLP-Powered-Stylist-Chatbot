@@ -1,0 +1,106 @@
+<aiml version="2.0">
+
+    <category>
+        <pattern>HOW DO I TAKE CARE OF MY *</pattern>
+        <template><srai>CARE <star/></srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT DOES MY * NEED</pattern>
+        <template><srai>CARE <star/></srai></template>
+    </category>
+
+    <category>
+        <pattern>CARE SNAKE PLANT</pattern>
+        <template>
+            Snake Plants are the toughest indoor plants in Pakistan:
+            1. Sunlight: They can handle low light or bright indirect light. (Check LDR sensor).
+            2. Water: Very little! Let the soil dry out completely between waterings. (Check Moisture sensor).
+            3. Temp: They thrive in temperatures between 15°C and 30°C but are very resilient.
+            Would you like me to check the current sensor readings for your Snake Plant?
+        </template>
+    </category>
+
+    <category>
+        <pattern>* SNAKE PLANT * STATUS *</pattern>
+        <template><srai>CHECK ALL SNAKEPLANT SENSORS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SNAKE PLANT * OKAY *</pattern>
+        <template><srai>CHECK ALL SNAKEPLANT SENSORS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SNAKE PLANT * WATER *</pattern>
+        <template><srai>IS MY SNAKE PLANT THIRSTY</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SNAKE PLANT * DRY *</pattern>
+        <template><srai>IS MY SNAKE PLANT THIRSTY</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SNAKE PLANT * SUN *</pattern>
+        <template><srai>IS THE SNAKE PLANT SUNLIGHT ENOUGH</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SNAKE PLANT * LIGHT *</pattern>
+        <template><srai>IS THE SNAKE PLANT SUNLIGHT ENOUGH</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SNAKE PLANT * TEMP *</pattern>
+        <template><srai>IS IT TOO HOT FOR THE SNAKE PLANT</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SNAKE PLANT * HEAT *</pattern>
+        <template><srai>IS IT TOO HOT FOR THE SNAKE PLANT</srai></template>
+    </category>
+
+    <category>
+        <pattern>CHECK ALL SNAKEPLANT SENSORS</pattern>
+        <template>
+            Let's check your Snake Plant's vitals:
+            1. Moisture: <srai>IS MY SNAKE PLANT THIRSTY</srai>
+            2. Heat: <srai>IS IT TOO HOT FOR THE SNAKE PLANT</srai>
+            3. Light: <srai>IS THE SNAKE PLANT SUNLIGHT ENOUGH</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS MY SNAKE PLANT THIRSTY</pattern>
+        <template>
+            <condition name="soil_moisture">
+                <li value="low">The soil is dry. This is perfect for a Snake Plant! You can wait a few more days before watering.</li>
+                <li value="high">Warning! Moisture is too high. Snake plants rot easily if the soil stays wet. Stop watering!</li>
+                <li>The moisture level is fine, but lean towards the drier side to be safe.</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS IT TOO HOT FOR THE SNAKE PLANT</pattern>
+        <template>
+            <condition name="temp">
+                <li value="hot">It's over 35°C. Snake plants are tough, but if it's this hot indoors, ensure there is some ventilation.</li>
+                <li>The temperature is <get name="temp"/>°C. Your Snake Plant is perfectly happy in this range.</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS THE SNAKE PLANT SUNLIGHT ENOUGH</pattern>
+        <template>
+            <condition name="light_level">
+                <li value="dark">The LDR shows low light. Snake plants survive here, but they grow much slower in the dark.</li>
+                <li value="bright">The light is bright. As long as it isn't direct midday sun, your Snake Plant will thrive!</li>
+                <li>Moderate light detected. This is a great environment for this plant.</li>
+            </condition>
+        </template>
+    </category>
+
+</aiml>

@@ -1,0 +1,106 @@
+<aiml version="2.0">
+
+    <category>
+        <pattern>HOW DO I TAKE CARE OF MY *</pattern>
+        <template><srai>CARE <star/></srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT DOES MY * NEED</pattern>
+        <template><srai>CARE <star/></srai></template>
+    </category>
+
+    <category>
+        <pattern>CARE ALOEVERA</pattern>
+        <template>
+            Aloe Vera is a hardy succulent that thrives in Pakistan:
+            1. Sunlight: It loves bright, indirect light. Direct noon sun can burn the leaves (Check LDR sensor).
+            2. Water: Very little! Let the soil dry out completely between waterings (Check Moisture sensor).
+            3. Temp: It handles Pakistan's heat well, ideally 20°C to 35°C.
+            Would you like me to check the current sensor readings for your Aloe Vera?
+        </template>
+    </category>
+
+    <category>
+        <pattern>* ALOEVERA * STATUS *</pattern>
+        <template><srai>CHECK ALL ALOEVERA SENSORS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* ALOEVERA * OKAY *</pattern>
+        <template><srai>CHECK ALL ALOEVERA SENSORS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* ALOEVERA * WATER *</pattern>
+        <template><srai>IS MY ALOEVERA THIRSTY</srai></template>
+    </category>
+
+    <category>
+        <pattern>* ALOEVERA * DRY *</pattern>
+        <template><srai>IS MY ALOEVERA THIRSTY</srai></template>
+    </category>
+
+    <category>
+        <pattern>* ALOEVERA * SUN *</pattern>
+        <template><srai>IS THE ALOEVERA SUNLIGHT ENOUGH</srai></template>
+    </category>
+
+    <category>
+        <pattern>* ALOEVERA * LIGHT *</pattern>
+        <template><srai>IS THE ALOEVERA SUNLIGHT ENOUGH</srai></template>
+    </category>
+
+    <category>
+        <pattern>* ALOEVERA * TEMP *</pattern>
+        <template><srai>IS IT TOO HOT FOR THE ALOEVERA</srai></template>
+    </category>
+
+    <category>
+        <pattern>* ALOEVERA * HEAT *</pattern>
+        <template><srai>IS IT TOO HOT FOR THE ALOEVERA</srai></template>
+    </category>
+
+    <category>
+        <pattern>CHECK ALL ALOEVERA SENSORS</pattern>
+        <template>
+            Let's check your Aloe Vera's vitals:
+            1. Moisture: <srai>IS MY ALOEVERA THIRSTY</srai>
+            2. Heat: <srai>IS IT TOO HOT FOR THE ALOEVERA</srai>
+            3. Light: <srai>IS THE ALOEVERA SUNLIGHT ENOUGH</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS MY ALOEVERA THIRSTY</pattern>
+        <template>
+            <condition name="soil_moisture">
+                <li value="low">The soil is dry, which is usually fine for Aloe. If the leaves look thin, give it a little water.</li>
+                <li value="high">Warning! The moisture is high. Aloe Vera hates "wet feet." Stop watering immediately!</li>
+                <li>The moisture level is perfect. Remember, less is more for Aloe Vera.</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS IT TOO HOT FOR THE ALOEVERA</pattern>
+        <template>
+            <condition name="temp">
+                <li value="hot">It's over 35°C. Aloe Vera is tough, but if the temperature keeps rising, ensure it isn't in direct scorching sun.</li>
+                <li>The temperature is <get name="temp"/>°C. This is a very comfortable range for your Aloe.</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS THE ALOEVERA SUNLIGHT ENOUGH</pattern>
+        <template>
+            <condition name="light_level">
+                <li value="dark">It's too dark. Aloe Vera will stretch and become weak without enough light.</li>
+                <li value="bright">The LDR shows bright light. This is great, as long as it's not burning the leaf tips!</li>
+                <li>Light levels are moderate and safe.</li>
+            </condition>
+        </template>
+    </category>
+
+</aiml>

@@ -1,0 +1,106 @@
+<aiml version="2.0">
+
+    <category>
+        <pattern>HOW DO I TAKE CARE OF MY *</pattern>
+        <template><srai>CARE <star/></srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT DOES MY * NEED</pattern>
+        <template><srai>CARE <star/></srai></template>
+    </category>
+
+    <category>
+        <pattern>CARE MARIGOLD</pattern>
+        <template>
+            Marigolds (Genda) are hardy plants for the Pakistani climate:
+            1. Sunlight: They love full sun! At least 6-8 hours (Check LDR sensor).
+            2. Water: Water at the base; keep soil well-drained (Check Moisture sensor).
+            3. Temp: They love warmth, ideally between 18°C and 30°C.
+            Would you like me to check the current sensor readings for your Marigold?
+        </template>
+    </category>
+
+    <category>
+        <pattern>* MARIGOLD * STATUS *</pattern>
+        <template><srai>CHECK ALL MARIGOLD SENSORS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* MARIGOLD * OKAY *</pattern>
+        <template><srai>CHECK ALL MARIGOLD SENSORS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* MARIGOLD * WATER *</pattern>
+        <template><srai>IS MY MARIGOLD THIRSTY</srai></template>
+    </category>
+
+    <category>
+        <pattern>* MARIGOLD * DRY *</pattern>
+        <template><srai>IS MY MARIGOLD THIRSTY</srai></template>
+    </category>
+
+    <category>
+        <pattern>* MARIGOLD * SUN *</pattern>
+        <template><srai>IS THE MARIGOLD SUNLIGHT ENOUGH</srai></template>
+    </category>
+
+    <category>
+        <pattern>* MARIGOLD * LIGHT *</pattern>
+        <template><srai>IS THE MARIGOLD SUNLIGHT ENOUGH</srai></template>
+    </category>
+
+    <category>
+        <pattern>* MARIGOLD * TEMP *</pattern>
+        <template><srai>IS IT TOO HOT FOR THE MARIGOLD</srai></template>
+    </category>
+
+    <category>
+        <pattern>* MARIGOLD * HEAT *</pattern>
+        <template><srai>IS IT TOO HOT FOR THE MARIGOLD</srai></template>
+    </category>
+
+    <category>
+        <pattern>CHECK ALL MARIGOLD SENSORS</pattern>
+        <template>
+            Let's check your Marigold's vitals:
+            1. Moisture: <srai>IS MY MARIGOLD THIRSTY</srai>
+            2. Heat: <srai>IS IT TOO HOT FOR THE MARIGOLD</srai>
+            3. Light: <srai>IS THE MARIGOLD SUNLIGHT ENOUGH</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS MY MARIGOLD THIRSTY</pattern>
+        <template>
+            <condition name="soil_moisture">
+                <li value="low">Yes! The moisture level is low. Marigolds need consistent water to bloom well.</li>
+                <li value="high">No, the soil is very wet. Be careful, Marigolds can get root rot!</li>
+                <li>The soil moisture is perfect for your Marigolds.</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS IT TOO HOT FOR THE MARIGOLD</pattern>
+        <template>
+            <condition name="temp">
+                <li value="hot">It's over 35°C! While Marigolds like heat, ensure they have enough water to survive this peak sun.</li>
+                <li>The temperature is currently <get name="temp"/>°C, which Marigolds absolutely love.</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS THE MARIGOLD SUNLIGHT ENOUGH</pattern>
+        <template>
+            <condition name="light_level">
+                <li value="dark">It is too dark. Marigolds will not bloom without bright, direct sunlight.</li>
+                <li value="bright">Yes, the LDR sensor shows plenty of light! Perfect for those orange blooms.</li>
+                <li>The light levels are moderate, but more sun is usually better for Genda.</li>
+            </condition>
+        </template>
+    </category>
+
+</aiml>

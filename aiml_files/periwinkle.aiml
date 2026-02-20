@@ -1,0 +1,106 @@
+<aiml version="2.0">
+
+    <category>
+        <pattern>HOW DO I TAKE CARE OF MY *</pattern>
+        <template><srai>CARE <star/></srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT DOES MY * NEED</pattern>
+        <template><srai>CARE <star/></srai></template>
+    </category>
+
+    <category>
+        <pattern>CARE PERIWINKLE</pattern>
+        <template>
+            Periwinkle (Sada-Bahar) is a champion of the Pakistani climate:
+            1. Sunlight: It loves full sun! It needs at least 6-8 hours to bloom (Check LDR sensor).
+            2. Water: It is drought-tolerant. Only water when the top soil feels dry (Check Moisture sensor).
+            3. Temp: It handles heat incredibly well, even above 40°C.
+            Would you like me to check the current sensor readings for your Sada-Bahar?
+        </template>
+    </category>
+
+    <category>
+        <pattern>* PERIWINKLE * STATUS *</pattern>
+        <template><srai>CHECK ALL PERIWINKLE SENSORS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* PERIWINKLE * OKAY *</pattern>
+        <template><srai>CHECK ALL PERIWINKLE SENSORS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* PERIWINKLE * WATER *</pattern>
+        <template><srai>IS MY PERIWINKLE THIRSTY</srai></template>
+    </category>
+
+    <category>
+        <pattern>* PERIWINKLE * DRY *</pattern>
+        <template><srai>IS MY PERIWINKLE THIRSTY</srai></template>
+    </category>
+
+    <category>
+        <pattern>* PERIWINKLE * SUN *</pattern>
+        <template><srai>IS THE PERIWINKLE SUNLIGHT ENOUGH</srai></template>
+    </category>
+
+    <category>
+        <pattern>* PERIWINKLE * LIGHT *</pattern>
+        <template><srai>IS THE PERIWINKLE SUNLIGHT ENOUGH</srai></template>
+    </category>
+
+    <category>
+        <pattern>* PERIWINKLE * TEMP *</pattern>
+        <template><srai>IS IT TOO HOT FOR THE PERIWINKLE</srai></template>
+    </category>
+
+    <category>
+        <pattern>* PERIWINKLE * HEAT *</pattern>
+        <template><srai>IS IT TOO HOT FOR THE PERIWINKLE</srai></template>
+    </category>
+
+    <category>
+        <pattern>CHECK ALL PERIWINKLE SENSORS</pattern>
+        <template>
+            Let's check your Sada-Bahar's vitals:
+            1. Moisture: <srai>IS MY PERIWINKLE THIRSTY</srai>
+            2. Heat: <srai>IS IT TOO HOT FOR THE PERIWINKLE</srai>
+            3. Light: <srai>IS THE PERIWINKLE SUNLIGHT ENOUGH</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS MY PERIWINKLE THIRSTY</pattern>
+        <template>
+            <condition name="soil_moisture">
+                <li value="low">The soil is dry. Periwinkles are tough, but a little water will help them keep blooming.</li>
+                <li value="high">Warning! The moisture is very high. Periwinkles hate soggy soil; it causes root rot and fungal wilt.</li>
+                <li>The moisture level is perfect. Your Sada-Bahar is well-hydrated!</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS IT TOO HOT FOR THE PERIWINKLE</pattern>
+        <template>
+            <condition name="temp">
+                <li value="hot">It's over 35°C. Don't worry, Periwinkles are heat-lovers! Just ensure they have enough water.</li>
+                <li>The temperature is <get name="temp"/>°C. This is excellent weather for a Periwinkle.</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS THE PERIWINKLE SUNLIGHT ENOUGH</pattern>
+        <template>
+            <condition name="light_level">
+                <li value="dark">It's too dark. Periwinkles need bright light to produce flowers. Move it to a sunnier spot.</li>
+                <li value="bright">The LDR shows bright light. This is exactly what a Sada-Bahar needs to thrive!</li>
+                <li>The light levels are moderate, which is safe but might result in fewer flowers.</li>
+            </condition>
+        </template>
+    </category>
+
+</aiml>

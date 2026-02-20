@@ -1,0 +1,106 @@
+<aiml version="2.0">
+
+    <category>
+        <pattern>HOW DO I TAKE CARE OF MY *</pattern>
+        <template><srai>CARE <star/></srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT DOES MY * NEED</pattern>
+        <template><srai>CARE <star/></srai></template>
+    </category>
+
+    <category>
+        <pattern>CARE MONEY PLANT</pattern>
+        <template>
+            Money Plants are very easy to grow in Pakistan:
+            1. Sunlight: They prefer indirect light or semi-shade. Direct sun burns their leaves (Check LDR sensor).
+            2. Water: They like to dry out slightly between waterings. Don't let them sit in water (Check Moisture sensor).
+            3. Temp: They love room temperatures (15°C to 30°C). Keep them away from hot dry winds (Loo).
+            Would you like me to check the current sensor readings for your Money Plant?
+        </template>
+    </category>
+
+    <category>
+        <pattern>* MONEY PLANT * STATUS *</pattern>
+        <template><srai>CHECK ALL MONEYPLANT SENSORS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* MONEY PLANT * OKAY *</pattern>
+        <template><srai>CHECK ALL MONEYPLANT SENSORS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* MONEY PLANT * WATER *</pattern>
+        <template><srai>IS MY MONEY PLANT THIRSTY</srai></template>
+    </category>
+
+    <category>
+        <pattern>* MONEY PLANT * DRY *</pattern>
+        <template><srai>IS MY MONEY PLANT THIRSTY</srai></template>
+    </category>
+
+    <category>
+        <pattern>* MONEY PLANT * SUN *</pattern>
+        <template><srai>IS THE MONEY PLANT SUNLIGHT ENOUGH</srai></template>
+    </category>
+
+    <category>
+        <pattern>* MONEY PLANT * LIGHT *</pattern>
+        <template><srai>IS THE MONEY PLANT SUNLIGHT ENOUGH</srai></template>
+    </category>
+
+    <category>
+        <pattern>* MONEY PLANT * TEMP *</pattern>
+        <template><srai>IS IT TOO HOT FOR THE MONEY PLANT</srai></template>
+    </category>
+
+    <category>
+        <pattern>* MONEY PLANT * HEAT *</pattern>
+        <template><srai>IS IT TOO HOT FOR THE MONEY PLANT</srai></template>
+    </category>
+
+    <category>
+        <pattern>CHECK ALL MONEYPLANT SENSORS</pattern>
+        <template>
+            Let's check your Money Plant's vitals:
+            1. Moisture: <srai>IS MY MONEY PLANT THIRSTY</srai>
+            2. Heat: <srai>IS IT TOO HOT FOR THE MONEY PLANT</srai>
+            3. Light: <srai>IS THE MONEY PLANT SUNLIGHT ENOUGH</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS MY MONEY PLANT THIRSTY</pattern>
+        <template>
+            <condition name="soil_moisture">
+                <li value="low">The soil is dry. Money plants are tough, but they'd appreciate a drink now!</li>
+                <li value="high">Warning! Soil moisture is too high. This is the main cause of yellow leaves in Money Plants. Stop watering!</li>
+                <li>The moisture level is just right. Keep it up!</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS IT TOO HOT FOR THE MONEY PLANT</pattern>
+        <template>
+            <condition name="temp">
+                <li value="hot">It's over 35°C. Money plants prefer cooler indoor spots. Make sure it isn't near a hot window.</li>
+                <li>The temperature is <get name="temp"/>°C. This is perfect for your Money Plant's growth.</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS THE MONEY PLANT SUNLIGHT ENOUGH</pattern>
+        <template>
+            <condition name="light_level">
+                <li value="dark">It is very dark. While Money Plants survive in low light, they grow much faster with indirect brightness.</li>
+                <li value="bright">The LDR sensor shows bright light. If this is direct sun, move the plant back so the leaves don't turn brown.</li>
+                <li>The light levels are moderate. This is the "sweet spot" for a Money Plant.</li>
+            </condition>
+        </template>
+    </category>
+
+</aiml>

@@ -1,0 +1,106 @@
+<aiml version="2.0">
+
+    <category>
+        <pattern>HOW DO I TAKE CARE OF MY *</pattern>
+        <template><srai>CARE <star/></srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT DOES MY * NEED</pattern>
+        <template><srai>CARE <star/></srai></template>
+    </category>
+
+    <category>
+        <pattern>CARE SUNFLOWER</pattern>
+        <template>
+            Sunflowers (Suraj Mukhi) are energy-hungry plants:
+            1. Sunlight: They need 6-8 hours of direct, intense sun. (Check LDR sensor).
+            2. Water: They need a lot of water while growing, but don't like waterlogged soil. (Check Moisture sensor).
+            3. Temp: They thrive in warmth (20°C to 35°C) and handle Pakistani summers well.
+            Would you like me to check the current sensor readings for your Sunflower?
+        </template>
+    </category>
+
+    <category>
+        <pattern>* SUNFLOWER * STATUS *</pattern>
+        <template><srai>CHECK ALL SUNFLOWER SENSORS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SUNFLOWER * OKAY *</pattern>
+        <template><srai>CHECK ALL SUNFLOWER SENSORS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SUNFLOWER * WATER *</pattern>
+        <template><srai>IS MY SUNFLOWER THIRSTY</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SUNFLOWER * DRY *</pattern>
+        <template><srai>IS MY SUNFLOWER THIRSTY</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SUNFLOWER * SUN *</pattern>
+        <template><srai>IS THE SUNFLOWER SUNLIGHT ENOUGH</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SUNFLOWER * LIGHT *</pattern>
+        <template><srai>IS THE SUNFLOWER SUNLIGHT ENOUGH</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SUNFLOWER * TEMP *</pattern>
+        <template><srai>IS IT TOO HOT FOR THE SUNFLOWER</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SUNFLOWER * HEAT *</pattern>
+        <template><srai>IS IT TOO HOT FOR THE SUNFLOWER</srai></template>
+    </category>
+
+    <category>
+        <pattern>CHECK ALL SUNFLOWER SENSORS</pattern>
+        <template>
+            Let's check your Sunflower's vitals:
+            1. Moisture: <srai>IS MY SUNFLOWER THIRSTY</srai>
+            2. Heat: <srai>IS IT TOO HOT FOR THE SUNFLOWER</srai>
+            3. Light: <srai>IS THE SUNLIGHT ENOUGH</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS MY SUNFLOWER THIRSTY</pattern>
+        <template>
+            <condition name="soil_moisture">
+                <li value="low">The soil is dry. Sunflowers have deep roots; give them a thorough soaking!</li>
+                <li value="high">The moisture is high. Ensure your pot has good drainage to prevent the stem from rotting.</li>
+                <li>Soil moisture is perfect for your Sunflower.</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS IT TOO HOT FOR THE SUNFLOWER</pattern>
+        <template>
+            <condition name="temp">
+                <li value="hot">It's over 35°C. Sunflowers love heat, but keep an eye on soil moisture—they dry out fast in this weather!</li>
+                <li>The temperature is <get name="temp"/>°C. This is great growing weather for Sunflowers.</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS THE SUNFLOWER SUNLIGHT ENOUGH</pattern>
+        <template>
+            <condition name="light_level">
+                <li value="dark">It is too dark. Sunflowers will droop and fail to bloom without full sun. Move it to the sunniest spot!</li>
+                <li value="bright">Excellent! The LDR shows high light levels. Your Sunflower will be very happy.</li>
+                <li>The light levels are moderate, but Sunflowers prefer even more direct sun if possible.</li>
+            </condition>
+        </template>
+    </category>
+
+</aiml>

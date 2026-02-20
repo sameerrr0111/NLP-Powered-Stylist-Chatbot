@@ -1,0 +1,106 @@
+<aiml version="2.0">
+
+    <category>
+        <pattern>HOW DO I TAKE CARE OF MY *</pattern>
+        <template><srai>CARE <star/></srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT DOES MY * NEED</pattern>
+        <template><srai>CARE <star/></srai></template>
+    </category>
+
+    <category>
+        <pattern>CARE TULIP</pattern>
+        <template>
+            Tulips are delicate and love cooler weather:
+            1. Sunlight: They need bright but "cool" sunlight. (Check LDR sensor).
+            2. Water: They need well-drained soil; bulbs rot easily if overwatered. (Check Moisture sensor).
+            3. Temp: They thrive in cool temperatures (5°C to 18°C). They struggle in Pakistan's heat.
+            Would you like me to check the current sensor readings for your Tulip?
+        </template>
+    </category>
+
+    <category>
+        <pattern>* TULIP * STATUS *</pattern>
+        <template><srai>CHECK ALL TULIP SENSORS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* TULIP * OKAY *</pattern>
+        <template><srai>CHECK ALL TULIP SENSORS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* TULIP * WATER *</pattern>
+        <template><srai>IS MY TULIP THIRSTY</srai></template>
+    </category>
+
+    <category>
+        <pattern>* TULIP * DRY *</pattern>
+        <template><srai>IS MY TULIP THIRSTY</srai></template>
+    </category>
+
+    <category>
+        <pattern>* TULIP * SUN *</pattern>
+        <template><srai>IS THE TULIP SUNLIGHT ENOUGH</srai></template>
+    </category>
+
+    <category>
+        <pattern>* TULIP * LIGHT *</pattern>
+        <template><srai>IS THE TULIP SUNLIGHT ENOUGH</srai></template>
+    </category>
+
+    <category>
+        <pattern>* TULIP * TEMP *</pattern>
+        <template><srai>IS IT TOO HOT FOR THE TULIP</srai></template>
+    </category>
+
+    <category>
+        <pattern>* TULIP * HEAT *</pattern>
+        <template><srai>IS IT TOO HOT FOR THE TULIP</srai></template>
+    </category>
+
+    <category>
+        <pattern>CHECK ALL TULIP SENSORS</pattern>
+        <template>
+            Let's check your Tulip's vitals:
+            1. Moisture: <srai>IS MY TULIP THIRSTY</srai>
+            2. Heat: <srai>IS IT TOO HOT FOR THE TULIP</srai>
+            3. Light: <srai>IS THE TULIP SUNLIGHT ENOUGH</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS MY TULIP THIRSTY</pattern>
+        <template>
+            <condition name="soil_moisture">
+                <li value="low">Yes, the soil is dry. Give it some water, but ensure the pot drains well!</li>
+                <li value="high">The soil is very wet. Stop watering, or the Tulip bulb might rot!</li>
+                <li>The moisture level is perfect for your Tulip bulbs.</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS IT TOO HOT FOR THE TULIP</pattern>
+        <template>
+            <condition name="temp">
+                <li value="hot">Yes! It is over 25°C. Tulips will wither in this heat. Move them to the coolest spot possible!</li>
+                <li>The temperature is currently <get name="temp"/>°C. This cool weather is perfect for Tulips!</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS THE TULIP SUNLIGHT ENOUGH</pattern>
+        <template>
+            <condition name="light_level">
+                <li value="dark">It is quite dark. Tulips need light to stand tall, otherwise they become "leggy."</li>
+                <li value="bright">The LDR shows bright light. Just make sure the sun isn't making the plant too hot!</li>
+                <li>The light levels are moderate and safe for the Tulip.</li>
+            </condition>
+        </template>
+    </category>
+
+</aiml>

@@ -1,0 +1,106 @@
+<aiml version="2.0">
+
+    <category>
+        <pattern>HOW DO I TAKE CARE OF MY *</pattern>
+        <template><srai>CARE <star/></srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT DOES MY * NEED</pattern>
+        <template><srai>CARE <star/></srai></template>
+    </category>
+
+    <category>
+        <pattern>CARE ROSE</pattern>
+        <template>
+            Roses in Pakistan need specific attention:
+            1. Sunlight: At least 6 hours (Check your LDR sensor).
+            2. Water: Keep soil moist but not soggy (Check Moisture sensor).
+            3. Temp: They thrive between 15°C and 28°C.
+            Would you like me to check the current sensor readings for your Rose?
+        </template>
+    </category>
+
+    <category>
+        <pattern>* ROSE * STATUS *</pattern>
+        <template><srai>CHECK ALL SENSORS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* ROSE * OKAY *</pattern>
+        <template><srai>CHECK ALL SENSORS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* ROSE * WATER *</pattern>
+        <template><srai>IS MY ROSE THIRSTY</srai></template>
+    </category>
+
+    <category>
+        <pattern>* ROSE * DRY *</pattern>
+        <template><srai>IS MY ROSE THIRSTY</srai></template>
+    </category>
+
+    <category>
+        <pattern>* ROSE * SUN *</pattern>
+        <template><srai>IS THE SUNLIGHT ENOUGH</srai></template>
+    </category>
+
+    <category>
+        <pattern>* ROSE * LIGHT *</pattern>
+        <template><srai>IS THE SUNLIGHT ENOUGH</srai></template>
+    </category>
+
+    <category>
+        <pattern>* ROSE * TEMP *</pattern>
+        <template><srai>IS IT TOO HOT FOR THE ROSE</srai></template>
+    </category>
+
+    <category>
+        <pattern>* ROSE * HEAT *</pattern>
+        <template><srai>IS IT TOO HOT FOR THE ROSE</srai></template>
+    </category>
+
+    <category>
+        <pattern>CHECK ALL SENSORS</pattern>
+        <template>
+            Let's check your Rose's vitals:
+            1. Moisture: <srai>IS MY ROSE THIRSTY</srai>
+            2. Heat: <srai>IS IT TOO HOT FOR THE ROSE</srai>
+            3. Light: <srai>IS THE SUNLIGHT ENOUGH</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS MY ROSE THIRSTY</pattern>
+        <template>
+            <condition name="soil_moisture">
+                <li value="low">Yes! The moisture level is low. Please water your Rose.</li>
+                <li value="high">No, the soil is quite wet. Don't overwater it!</li>
+                <li>The soil moisture is perfect right now.</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS IT TOO HOT FOR THE ROSE</pattern>
+        <template>
+            <condition name="temp">
+                <li value="hot">It's over 35°C! You should move the Rose to a shaded area.</li>
+                <li>The temperature is currently <get name="temp"/>°C, which is fine for a Rose.</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS THE SUNLIGHT ENOUGH</pattern>
+        <template>
+            <condition name="light_level">
+                <li value="dark">It is too dark. Roses need bright sunlight to bloom.</li>
+                <li value="bright">Yes, the LDR sensor shows plenty of light!</li>
+                <li>The light levels are moderate.</li>
+            </condition>
+        </template>
+    </category>
+
+</aiml>

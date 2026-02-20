@@ -1,0 +1,106 @@
+<aiml version="2.0">
+
+    <category>
+        <pattern>HOW DO I TAKE CARE OF MY *</pattern>
+        <template><srai>CARE <star/></srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT DOES MY * NEED</pattern>
+        <template><srai>CARE <star/></srai></template>
+    </category>
+
+    <category>
+        <pattern>CARE HIBISCUS</pattern>
+        <template>
+            Hibiscus loves the tropical Pakistani climate but needs constant care:
+            1. Sunlight: They need 6-8 hours of bright sun to produce big blooms (Check LDR sensor).
+            2. Water: They are thirsty plants! Keep the soil consistently moist (Check Moisture sensor).
+            3. Temp: They thrive in warmth (15°C to 35°C) but hate frost and extreme dry heat.
+            Would you like me to check the current sensor readings for your Hibiscus?
+        </template>
+    </category>
+
+    <category>
+        <pattern>* HIBISCUS * STATUS *</pattern>
+        <template><srai>CHECK ALL HIBISCUS SENSORS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* HIBISCUS * OKAY *</pattern>
+        <template><srai>CHECK ALL HIBISCUS SENSORS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* HIBISCUS * WATER *</pattern>
+        <template><srai>IS MY HIBISCUS THIRSTY</srai></template>
+    </category>
+
+    <category>
+        <pattern>* HIBISCUS * DRY *</pattern>
+        <template><srai>IS MY HIBISCUS THIRSTY</srai></template>
+    </category>
+
+    <category>
+        <pattern>* HIBISCUS * SUN *</pattern>
+        <template><srai>IS THE HIBISCUS SUNLIGHT ENOUGH</srai></template>
+    </category>
+
+    <category>
+        <pattern>* HIBISCUS * LIGHT *</pattern>
+        <template><srai>IS THE HIBISCUS SUNLIGHT ENOUGH</srai></template>
+    </category>
+
+    <category>
+        <pattern>* HIBISCUS * TEMP *</pattern>
+        <template><srai>IS IT TOO HOT FOR THE HIBISCUS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* HIBISCUS * HEAT *</pattern>
+        <template><srai>IS IT TOO HOT FOR THE HIBISCUS</srai></template>
+    </category>
+
+    <category>
+        <pattern>CHECK ALL HIBISCUS SENSORS</pattern>
+        <template>
+            Let's check your Hibiscus vitals:
+            1. Moisture: <srai>IS MY HIBISCUS THIRSTY</srai>
+            2. Heat: <srai>IS IT TOO HOT FOR THE HIBISCUS</srai>
+            3. Light: <srai>IS THE HIBISCUS SUNLIGHT ENOUGH</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS MY HIBISCUS THIRSTY</pattern>
+        <template>
+            <condition name="soil_moisture">
+                <li value="low">Yes! Hibiscus is very sensitive to dry soil. Water it now to prevent the buds from falling off!</li>
+                <li value="high">The soil is very wet. Make sure the water isn't standing, or the leaves will turn yellow.</li>
+                <li>Moisture is perfect. A happy Hibiscus needs steady hydration!</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS IT TOO HOT FOR THE HIBISCUS</pattern>
+        <template>
+            <condition name="temp">
+                <li value="hot">It's over 35°C. Hibiscus loves heat, but in the peak of a Pakistani summer, give it some afternoon shade to keep the flowers fresh.</li>
+                <li>The temperature is <get name="temp"/>°C. This is perfect tropical weather for blooming!</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS THE HIBISCUS SUNLIGHT ENOUGH</pattern>
+        <template>
+            <condition name="light_level">
+                <li value="dark">It is too dark. Without bright light, your Hibiscus will stop flowering.</li>
+                <li value="bright">Great light levels! This will encourage the plant to produce those big, beautiful flowers.</li>
+                <li>The light is okay, but more direct sun will help it bloom better.</li>
+            </condition>
+        </template>
+    </category>
+
+</aiml>

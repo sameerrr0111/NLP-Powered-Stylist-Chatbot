@@ -1,0 +1,106 @@
+<aiml version="2.0">
+
+    <category>
+        <pattern>HOW DO I TAKE CARE OF MY *</pattern>
+        <template><srai>CARE <star/></srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT DOES MY * NEED</pattern>
+        <template><srai>CARE <star/></srai></template>
+    </category>
+
+    <category>
+        <pattern>CARE BOUGAINVILLEA</pattern>
+        <template>
+            Bougainvillea is a sun-loving powerhouse in Pakistan:
+            1. Sunlight: It needs at least 6-8 hours of direct, blazing sun to bloom. (Check LDR sensor).
+            2. Water: It prefers to dry out. Overwatering causes leaves to drop and stops blooming. (Check Moisture sensor).
+            3. Temp: It thrives in intense heat (up to 40°C+) but is sensitive to frost in winter.
+            Would you like me to check the current sensor readings for your Bougainvillea?
+        </template>
+    </category>
+
+    <category>
+        <pattern>* BOUGAINVILLEA * STATUS *</pattern>
+        <template><srai>CHECK ALL BOUGAINVILLEA SENSORS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* BOUGAINVILLEA * OKAY *</pattern>
+        <template><srai>CHECK ALL BOUGAINVILLEA SENSORS</srai></template>
+    </category>
+
+    <category>
+        <pattern>* BOUGAINVILLEA * WATER *</pattern>
+        <template><srai>IS MY BOUGAINVILLEA THIRSTY</srai></template>
+    </category>
+
+    <category>
+        <pattern>* BOUGAINVILLEA * DRY *</pattern>
+        <template><srai>IS MY BOUGAINVILLEA THIRSTY</srai></template>
+    </category>
+
+    <category>
+        <pattern>* BOUGAINVILLEA * SUN *</pattern>
+        <template><srai>IS THE BOUGAINVILLEA SUNLIGHT ENOUGH</srai></template>
+    </category>
+
+    <category>
+        <pattern>* BOUGAINVILLEA * LIGHT *</pattern>
+        <template><srai>IS THE BOUGAINVILLEA SUNLIGHT ENOUGH</srai></template>
+    </category>
+
+    <category>
+        <pattern>* BOUGAINVILLEA * TEMP *</pattern>
+        <template><srai>IS IT TOO HOT FOR THE BOUGAINVILLEA</srai></template>
+    </category>
+
+    <category>
+        <pattern>* BOUGAINVILLEA * HEAT *</pattern>
+        <template><srai>IS IT TOO HOT FOR THE BOUGAINVILLEA</srai></template>
+    </category>
+
+    <category>
+        <pattern>CHECK ALL BOUGAINVILLEA SENSORS</pattern>
+        <template>
+            Let's check your Bougainvillea's vitals:
+            1. Moisture: <srai>IS MY BOUGAINVILLEA THIRSTY</srai>
+            2. Heat: <srai>IS IT TOO HOT FOR THE BOUGAINVILLEA</srai>
+            3. Light: <srai>IS THE BOUGAINVILLEA SUNLIGHT ENOUGH</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS MY BOUGAINVILLEA THIRSTY</pattern>
+        <template>
+            <condition name="soil_moisture">
+                <li value="low">The soil is dry. This is actually good! Bougainvillea blooms best when the soil is a bit dry.</li>
+                <li value="high">Warning! Soil moisture is too high. If the soil stays wet, you will get only green leaves and no flowers.</li>
+                <li>Moisture is moderate. This is fine, but let it dry out a bit more to encourage blooming.</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS IT TOO HOT FOR THE BOUGAINVILLEA</pattern>
+        <template>
+            <condition name="temp">
+                <li value="hot">It's over 35°C. This is perfect! Bougainvillea loves the Pakistani summer heat.</li>
+                <li>The temperature is <get name="temp"/>°C. This is a very comfortable range for growth.</li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS THE BOUGAINVILLEA SUNLIGHT ENOUGH</pattern>
+        <template>
+            <condition name="light_level">
+                <li value="dark">It is too dark. Bougainvillea will not produce its colorful bracts without full, direct sun.</li>
+                <li value="bright">The LDR sensor shows great light! This intense sun is what makes the colors pop.</li>
+                <li>Moderate light detected. Move it to a sunnier spot for a better floral display.</li>
+            </condition>
+        </template>
+    </category>
+
+</aiml>
